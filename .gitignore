@@ -33,6 +33,7 @@ bower_components
 
 # Logs 
 *.log
+.idea/
 
 # specials
 price.txt

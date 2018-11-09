@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42efde9d-5ce0-4c0c-828c-25f1cb56af03" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/salon/calculate.py" afterDir="false" />
+    <list default="true" id="42efde9d-5ce0-4c0c-828c-25f1cb56af03" name="Default Changelist" comment="Default Changelist">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -274,11 +274,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="calculate.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="calculate.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/salon/calculate.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="40">
+            <state relative-caret-position="146">
               <caret line="173" column="24" lean-forward="true" selection-start-line="173" selection-start-column="24" selection-end-line="173" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
             </state>
           </provider>
         </entry>
@@ -442,6 +451,7 @@
         <option value="$PROJECT_DIR$/requirments.txt" />
         <option value="$PROJECT_DIR$/salon/go_scripts.py" />
         <option value="$PROJECT_DIR$/salon/calculate.py" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -505,7 +515,9 @@
     <option name="width" value="697" />
     <option name="height" value="745" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <autoscrollFromSource ProjectPane="true" />
@@ -838,14 +850,15 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1376" height="754" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="9" weight="0.32668713" />
-      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.47093022" side_tool="true" visible="true" weight="0.7154882" />
+      <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.50284415" side_tool="true" visible="true" weight="0.543771" />
       <window_info anchor="right" id="Database Changes" order="6" weight="0.39183056" />
-      <window_info anchor="bottom" id="Version Control" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.49943116" weight="0.32996634" />
       <window_info anchor="bottom" x="207" y="106" width="947" height="652" id="Python Console" order="14" sideWeight="0.5290698" weight="0.45622894" />
       <window_info anchor="bottom" id="Run" order="4" sideWeight="0.494705" weight="0.16161616" />
-      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.4977307" weight="0.54383117" />
+      <window_info anchor="bottom" id="Terminal" order="5" sideWeight="0.49715585" visible="true" weight="0.543771" />
       <window_info anchor="top" id="Gulp" order="0" sideWeight="0.35240275" side_tool="true" weight="0.27487352" />
       <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.64141417" visible="true" weight="0.33206686" />
       <window_info anchor="bottom" id="Docker" order="10" show_stripe_button="false" />
@@ -896,6 +909,32 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="RECENTLY_FILTERED_USER_GROUPS">
+                <collection />
+              </option>
+              <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+                <collection />
+              </option>
+              <option name="COLUMN_ORDER">
+                <list>
+                  <option value="0" />
+                  <option value="1" />
+                  <option value="2" />
+                  <option value="3" />
+                </list>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
@@ -924,13 +963,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/salon/static/js/addons/datatables.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2000">
-          <caret line="1260" column="37" selection-start-line="1260" selection-start-column="31" selection-end-line="1260" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/venv/Lib/site-packages/django/utils/timezone.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3927" />
@@ -1381,8 +1413,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/salon/calculate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="40">
+        <state relative-caret-position="146">
           <caret line="173" column="24" lean-forward="true" selection-start-line="173" selection-start-column="24" selection-end-line="173" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="36" lean-forward="true" selection-start-line="36" selection-end-line="36" />
         </state>
       </provider>
     </entry>
