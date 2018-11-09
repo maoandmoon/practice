@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebResourcesPaths">
+    <contentEntries>
+      <entry url="file://$PROJECT_DIR$">
+        <entryData>
+          <resourceRoots>
+            <path value="file://$PROJECT_DIR$/salon/static" />
+            <path value="file://$PROJECT_DIR$/media" />
+            <path value="file://$PROJECT_DIR$/media/CACHE" />
+            <path value="file://$PROJECT_DIR$/media/images" />
+            <path value="file://$PROJECT_DIR$/salon/static/css" />
+            <path value="file://$PROJECT_DIR$/salon/static/font" />
+            <path value="file://$PROJECT_DIR$/salon/static/img" />
+            <path value="file://$PROJECT_DIR$/salon/static/js" />
+          </resourceRoots>
+        </entryData>
+      </entry>
+    </contentEntries>
+  </component>
+</project>

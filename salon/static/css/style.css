@@ -1,0 +1,69 @@
+html,
+body,
+header,
+#intro {
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Opinion Pro';
+    src: local('Opinion Pro Light'), local('OpinionPro-Light'), url('../font/opinionpro/Opinionprolight.woff2') format('woff2'), url('../font/opinionpro/Opinionprolight.woff') format('woff'), url('../font/opinionpro/Opinionprolight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Opinion Pro';
+    src: local('Opinion Pro Light Italic'), local('OpinionPro-LightItalic'), url('../font/opinionpro/Opinionprolightitalic.woff2') format('woff2'), url('../font/opinionpro/Opinionprolightitalic.woff') format('woff'), url('../font/opinionpro/Opinionprolightitalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}
+
+body{
+    font-family: "Opinion Pro", serif;
+}
+
+#intro {
+    background: url("../img/albom/12.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.top-nav-collapse {
+    background-color: #fff;
+  }
+  @media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+      background-color: #fff;
+    }
+  }
+  @media (min-width: 800px) and (max-width: 850px) {
+    .navbar:not(.top-nav-collapse) {
+      background-color: #fff;
+    }
+  }
+
+.card-header .fa {
+  transition: .3s transform ease-in-out;
+}
+.card-header .collapsed .fa {
+  transform: rotate(180deg);
+  /*transform: rotate(-270deg);*/
+}
+
+.card-header .plus {
+  transition: .3s transform ease-in-out;
+}
+.card-header .collapsed .plus {
+  transform: rotate(-135deg);
+}
+.wow {
+  visibility: hidden;
+}
+
+.btn-rounded{
+    border-radius: 1.5rem!important;
+}
+
+
+
