@@ -3,7 +3,7 @@ from django.utils.safestring import mark_safe
 from imagekit.models import ImageSpecField
 from pilkit.processors import ResizeToFit, SmartResize, SmartCrop
 
-from validators import validate_phone_number
+from salon.validators import validate_phone_number
 
 
 class Category(models.Model):
