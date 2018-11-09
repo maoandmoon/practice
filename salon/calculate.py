@@ -173,6 +173,8 @@ def add_price(prices=price_list):
             price.save()
 def calculate_delay(common_delay=1):
     category_items = Category.objects.all()
+    if not len(category_items):
+        return []
     delay_step = common_delay / len(category_items)
     return [(category,
              "{0}s".format(round((delay_step * category.pk), 3)),
