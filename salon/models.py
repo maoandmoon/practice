@@ -1,13 +1,13 @@
 from django.db import models
 from django.utils.safestring import mark_safe
 from imagekit.models import ImageSpecField
-from pilkit.processors import ResizeToFit, SmartResize, SmartCrop
-
+from pilkit.processors import SmartResize
 from salon.validators import validate_phone_number
 
 
 class Category(models.Model):
     title = models.CharField(max_length=100, unique=True, verbose_name='Название')
+    description = models.CharField(max_length=300, verbose_name='Описание', blank=True, null=True)
 
     def __str__(self):
         return self.title
@@ -17,11 +17,38 @@ class Category(models.Model):
         verbose_name = 'Категория'
 
 
+def get_del_cat():
+    return Category.objects.get_or_create(title='DELETED')
+
+
+class SubCategory(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Название')
+    category = models.ForeignKey(Category, on_delete=models.SET(get_del_cat), verbose_name='Категория')
+    description = models.CharField(max_length=300, verbose_name='Описание', blank=True, null=True)
+
+    class Meta:
+        verbose_name_plural = 'Подкатегории'
+        verbose_name = 'Подкатегория'
+
+    def __str__(self):
+        return self.title
+
+
+
+
+def get_del_subcat():
+    return SubCategory.objects.get_or_create(title='DELETED')
+
+
 class PriceItem(models.Model):
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', null=True, blank=True)
     title = models.CharField(max_length=400, verbose_name='Наименование')
     description = models.CharField(max_length=300, verbose_name='Описание', blank=True, null=True)
     price = models.CharField(max_length=150, verbose_name='Цена', blank=True, null=True)
+    category = models.ForeignKey(Category, on_delete=models.SET(get_del_cat), verbose_name='Категория',
+                                 related_name='category_linked_models')
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.SET(get_del_subcat), verbose_name='Подкатегория', null=True, blank=True,
+                                    related_name='related_subcategory_models')
+    for_inline = models.ForeignKey('self', models.CASCADE, related_name='inline_price_models', null=True, blank=True)
 
     def __str__(self):
         return self.title
@@ -50,7 +77,7 @@ class Contact(models.Model):
 
 class ImageCard(models.Model):
     image = models.ImageField(verbose_name='Фотография', upload_to='images', blank=True, null=True)
-    thumb = ImageSpecField(source='image', options={'quality': 90}, processors=[SmartResize(900, 375)])
+    thumb = ImageSpecField(source='image', options={'quality': 100}, processors=[SmartResize(900, 375)])
 
     def __str__(self):
         return self.thumbnail()

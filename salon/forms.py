@@ -1,5 +1,6 @@
+from dal import autocomplete
 from django import forms
-from salon.models import Contact
+from salon.models import Contact, PriceItem
 from django.core.mail import send_mail
 from django.conf import settings
 
@@ -17,17 +18,16 @@ class ContactModelForm(forms.ModelForm):
                   from_email=settings.DEFAULT_FROM_EMAIL,
                   recipient_list=settings.PRACTICE_ADMINS)
 
-    # def __init__(self, *args, **kwargs):
-    #     super(ContactModelForm, self).__init__(*args, **kwargs)
-    #     from crispy_forms.helper import FormHelper
-    #     self.helper = FormHelper()
-    #     self.helper.form_class = 'border border-light p-5 z-depth-1-half'
-    #     self.helper.form_method = 'post'
-    #     from django.urls import reverse
-    #     self.helper.form_action = reverse('contacts')
-    #     self.helper.help_text_inline = True
-    #     self.helper.html5_required = True
-    #     self.helper.label_class = 'col-md-2 control-label'
-    #     self.helper.field_class = 'col-md-10'
-    #     from crispy_forms.layout import Submit
-    #     self.helper.add_input(Submit('send_button', u'Отправить'))
+
+class PriceItemForm(forms.ModelForm):
+    def clean_subcategory(self):
+        category = self.cleaned_data.get('category', None)
+        subcategory = self.cleaned_data.get('subcategory', None)
+        if subcategory and category and subcategory.category != category:
+            raise forms.ValidationError('Wrong subcategory for category  ')
+        return subcategory
+
+    class Meta:
+        model = PriceItem
+        fields = ('title', 'price', 'category', 'subcategory', 'description')
+        widgets = {'subcategory': autocomplete.ModelSelect2(url='subcategory_autocomplete', forward=('category',))}

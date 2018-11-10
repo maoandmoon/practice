@@ -2,12 +2,11 @@
 <html lang="en">
 <head>
     {% load static %}
-    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Практика - Лаборатория красоты</title>
-    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
     <!-- Bootstrap core CSS -->
@@ -17,9 +16,7 @@
     <!-- Your custom styles (optional) -->
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
     <!--  assuming your livereload server runs at localhost:35729 -->
-    {% if debug %}
-        <script async type="text/javascript" src="//localhost:35729/livereload.js"></script>
-    {% endif %}
+    <script async type="text/javascript" src="//localhost:35729/livereload.js"></script>
 </head>
 <body>
 <header>
@@ -35,31 +32,31 @@
             <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="basicNav">
                 <!-- Links -->
-                <ul class="navbar-nav mr-auto smooth-scroll">
-                    <li class="nav-item">
-                        <a data-scroll class="nav-link text-dark font-weight-bold" href="#intro">Практика</a>
-                    </li>
-                    <li class="nav-item">
+                <ul class="nav-justified navbar-nav m-auto smooth-scroll text-uppercase">
+{#                    <li class="nav-item d-none d-lg-block d-xl-block">#}
+{#                        <a data-scroll class="nav-link text-dark font-weight-bold" href="#intro">Практика</a>#}
+{#                    </li>#}
+                    <li class="nav-item m-2">
                         <a data-scroll class="nav-link text-dark font-weight-bold" href="#about">О нас</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item m-2">
                         <a data-scroll class="nav-link text-dark font-weight-bold" href="#price">Меню</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item m-2">
                         <a data-scroll class="nav-link text-dark font-weight-bold" href="#gallery">Салон</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item m-2">
                         <a data-scroll class="nav-link text-dark font-weight-bold" href="#reviews">Отзывы</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item m-2">
                         <a data-scroll class="nav-link text-dark font-weight-bold" href="#partners">Партнеры</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item m-2">
                         <a data-scroll class="nav-link text-dark font-weight-bold" href="#contact">Контакты</a>
                     </li>
 
                     {% if request.user.is_staff %}
-                        <li class="nav-item">
+                        <li class="nav-item m-2">
                             <a class="nav-link text-dark font-weight-bold" target="_blank" href="{% url 'admin:index' %}">Админка</a>
                         </li>
                     {% endif %}
@@ -69,13 +66,13 @@
                 <!-- Social Icon  -->
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
-                        <a target="_blank" href="//facebook.com" class="nav-link"><i class="fa fa-facebook"></i></a>
+                        <a target="_blank" href="//facebook.com" class="nav-link text-dark"><i class="fa fa-facebook"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a href="//vk.com/club165536773" target="_blank" class="nav-link"><i class="fa fa-vk"></i></a>
+                        <a href="//vk.com/club165536773" target="_blank" class="nav-link text-dark"><i class="fa fa-vk"></i></a>
                     </li>
                     <li class="nav-item">
-                        <a href="https://www.instagram.com/praktikabeauty/" target="_blank" class="nav-link"><i class="fa fa-instagram"></i></a>
+                        <a href="https://www.instagram.com/praktikabeauty/" target="_blank" class="nav-link text-dark"><i class="fa fa-instagram"></i></a>
                     </li>
                 </ul>
             </div>
@@ -88,13 +85,13 @@
         <div class="mask rgba-white-strong">
             <div class="container-fluid d-flex align-items-center justify-content-center h-100">
                 <div class="row d-flex justify-content-center text-center">
-                    <div class="col-md-12">
+                    <div class="col-md-12 m-5">
                         <!-- Heading -->
-                        <h2 class="display-4  pt-5 mb-2">Практика</h2>
+                        <h2 class="display-4  pt-5 mb-2 text-uppercase">Практика</h2>
                         <!-- Divider -->
                         <hr class="hr-dark">
                         <!-- Description -->
-                        <h4 class=" my-4">Ваша красота - наша практика.</h4>
+                        <h4 class="text-lo my-4">Ваша красота - наша практика</h4>
                         <!--<a><i class="fa fa-angle-down fa-5x"></i></a>-->
                         <!--<button type="button" class="btn btn-outline-white animated fadeIn" data-scroll onclick="location.href='#about'">Узнать больше</button>-->
                         <a href="#about" data-scroll class="text-dark animated slow bounceOutDown infinite"  ><i class="fa fa-angle-down fa-4x"></i></a>
@@ -138,8 +135,10 @@
                                 <div class="card-header border-0 rounded-0" id="heading-1">
                                     <h4 class="mt-3">
                                         <a class="text-dark font-weight-bold collapsed" role="button" data-toggle="collapse" href="#collapse-{{ category.pk }}" aria-expanded="false" aria-controls="collapse-{{ category.pk }}">
-                                            <!--<span class="plus pull-right" ><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>-->
-                                            <i class="fa  fa-2x fa-angle-up fa-pull-right"></i>{{ category }}
+
+                                            <span class="plus pull-right" ><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>
+{#                                            <i class="fa  fa-2x fa-angle-up fa-pull-right"></i>#}
+                                            {{ category }}
                                         </a>
                                     </h4>
                                 </div>
@@ -205,7 +204,7 @@
                 <div class="container text-center mt-5">
 
                 <a href="https://www.instagram.com/praktikabeauty/" target="_blank" >
-                    <img src="{% static '/img/Instagram.png' %}" width="175" class="mb-5 " style="border-radius: 9px;">
+                    <img src="{% static '/img/Instagram2016.png' %}" width="175" class="mb-5 " style="border-radius: 9px;">
                 </a>
                 <div class="row">
                     {% for link in instagram_links %}
@@ -293,44 +292,28 @@
         <hr class="my-5">
         <section id="partners" class="text-center">
         <h2 class="font-weight-bold mb-5">Партнеры</h2>
-
+        <div class="container">
             <div class="row">
-        <!--Grid column-->
-
-                <div class="col-md-4 mb-1">
-                    <img class="img-fluid w-50" src="{% static 'img/brands/redken.jpg' %}">
+                <div class="col-md-4 mb-1 ">
+                    <img class="img-fluid w-25" src="{% static 'img/brands/cnd.jpg' %}">
                 </div>
                 <div class="col-md-4 mb-1">
-                    <img class="img-fluid w-50" src="{% static 'img/brands/beautix.jpg' %}">
+                    <img class="img-fluid w-25" src="{% static 'img/brands/opi.jpg' %}">
+                </div>
+                <div class="col-md-4">
+                    <img class="img-fluid w-25" src="{% static 'img/brands/redken.jpg' %}">
+                </div>
+                <div class="col-md-4 ">
+                    <img class="img-fluid w-25" src="{% static 'img/brands/beautix.jpg' %}">
+                </div>
+                <div class="col-md-4 ">
+                    <img class="img-fluid w-25" src="{% static 'img/brands/gehwol.jpg' %}">
                 </div>
                 <div class="col-md-4 mb-1">
-                    <img class="img-fluid w-50" src="{% static 'img/brands/gehwol.jpg' %}">
+                    <img class="img-fluid w-25" src="{% static 'img/brands/joico.jpg' %}">
                 </div>
             </div>
-            <div class="row">
-
-                <!--Grid column-->
-                <!--Grid column-->
-                    <div class="col-md-4 mb-1">
-                    <img class="img-fluid w-50" src="{% static 'img/brands/joico.jpg' %}">
-                </div>
-
-                 <div class="col-md-4 mb-1">
-                    <img class="img-fluid w-50" src="{% static 'img/brands/cnd.jpg' %}">
-                </div>
-
-                <!--Grid column-->
-                <div class="col-md-4 mb-1">
-                    <img class="img-fluid w-50" src="{% static 'img/brands/opi.jpg' %}">
-                </div>
-
-
-
-
-                <!--Grid column-->
-                <!--Grid column-->
-            </div>
-
+        </div>
         </section>
         <hr class="my-5">
 
@@ -404,7 +387,7 @@
                 <!--Grid column-->
                 <div class="col-md-6 col-lg-7 text-center text-md-right">
                     <!--Facebook-->
-                    <a class="fb-ic ml-0" target="_blank" href="//facebook.com">
+                    <a class="fb-ic ml-0 " target="_blank" href="//facebook.com">
                         <i class="fa fa-facebook white-text mr-4"> </i>
                     </a>
                     <!--Vk-->

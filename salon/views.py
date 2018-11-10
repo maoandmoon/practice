@@ -1,11 +1,22 @@
-from  datetime import datetime
-
-from django.shortcuts import render, render_to_response
-from django.utils import timezone
-from django.views.generic import ListView, FormView
+from datetime import datetime
+from django.shortcuts import render
+from django.views.generic import FormView
 from .calculate import calculate_delay
 from .models import *
 from .forms import *
+from dal_select2.views import Select2QuerySetView
+
+
+class SubCategorySelect2(Select2QuerySetView):
+    model = SubCategory
+    create_field = 'title'
+
+    def get_queryset(self):
+        qs = super(SubCategorySelect2, self).get_queryset()
+        category = self.forwarded.get('category', None)
+        if category:
+            qs = qs.filter(category_id=category)
+        return qs
 
 
 class Home(FormView):

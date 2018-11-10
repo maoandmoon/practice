@@ -163,7 +163,6 @@ price_list = {
 
 def add_price(prices=price_list):
     for cat_name in prices:
-        _: object
         for item in prices[cat_name]:
             cat = Category.objects.get(title=cat_name)
             price = PriceItem()
@@ -171,6 +170,8 @@ def add_price(prices=price_list):
             price.price = item[1]
             price.title = item[0]
             price.save()
+
+
 def calculate_delay(common_delay=1):
     category_items = Category.objects.all()
     if not len(category_items):

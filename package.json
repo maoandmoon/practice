@@ -14,5 +14,9 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-watch": "^5.0.1",
     "gulp-open": "^3.0.1"
+  },
+  "dependencies": {
+    "gulp-shell": "^0.6.5",
+    "os-name": "^2.0.1"
   }
 }
