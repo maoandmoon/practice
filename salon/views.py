@@ -9,7 +9,7 @@ from dal_select2.views import Select2QuerySetView
 
 class SubCategorySelect2(Select2QuerySetView):
     model = SubCategory
-    create_field = 'title'
+    model_field_name = 'title'
 
     def get_queryset(self):
         qs = super(SubCategorySelect2, self).get_queryset()

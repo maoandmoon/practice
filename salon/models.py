@@ -17,13 +17,9 @@ class Category(models.Model):
         verbose_name = 'Категория'
 
 
-def get_del_cat():
-    return Category.objects.get_or_create(title='DELETED')
-
-
 class SubCategory(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название')
-    category = models.ForeignKey(Category, on_delete=models.SET(get_del_cat), verbose_name='Категория')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
     description = models.CharField(max_length=300, verbose_name='Описание', blank=True, null=True)
 
     class Meta:
@@ -34,19 +30,13 @@ class SubCategory(models.Model):
         return self.title
 
 
-
-
-def get_del_subcat():
-    return SubCategory.objects.get_or_create(title='DELETED')
-
-
 class PriceItem(models.Model):
     title = models.CharField(max_length=400, verbose_name='Наименование')
     description = models.CharField(max_length=300, verbose_name='Описание', blank=True, null=True)
     price = models.CharField(max_length=150, verbose_name='Цена', blank=True, null=True)
-    category = models.ForeignKey(Category, on_delete=models.SET(get_del_cat), verbose_name='Категория',
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория',
                                  related_name='category_linked_models')
-    subcategory = models.ForeignKey(SubCategory, on_delete=models.SET(get_del_subcat), verbose_name='Подкатегория', null=True, blank=True,
+    subcategory = models.ForeignKey(SubCategory, on_delete=models.CASCADE, verbose_name='Подкатегория', null=True, blank=True,
                                     related_name='related_subcategory_models')
     for_inline = models.ForeignKey('self', models.CASCADE, related_name='inline_price_models', null=True, blank=True)
 
