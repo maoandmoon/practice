@@ -55,7 +55,7 @@ gulp.task('django', function() {
 gulp.task('go', function() {
     livereload.listen();
     gulp.watch("salon/static/css/style.css", ["css-minify"]);
-    gulp.watch("salon/static/js/main.js", ['js-minify']);
+    gulp.watch("salon/static/js/main.js", ['js-minify']);m
     gulp.watch(["salon/static/js/main.js", "salon/templates/*", "salon/static/css/style.css"]).on('change', livereload.changed);
 });
 

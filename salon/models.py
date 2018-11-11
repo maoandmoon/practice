@@ -17,10 +17,6 @@ class Category(models.Model):
         verbose_name = 'Категория'
 
 
-def get_del_cat():
-    return Category.objects.get_or_create(title='DELETED')
-
-
 class SubCategory(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название')
     category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', )
@@ -36,10 +32,6 @@ class SubCategory(models.Model):
 
     def __str__(self):
         return self.title
-
-
-def get_del_subcat():
-    return SubCategory.objects.get_or_create(title='DELETED')
 
 
 class PriceItem(models.Model):
