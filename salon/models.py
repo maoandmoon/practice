@@ -17,17 +17,29 @@ class Category(models.Model):
         verbose_name = 'Категория'
 
 
+def get_del_cat():
+    return Category.objects.get_or_create(title='DELETED')
+
+
 class SubCategory(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название')
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория')
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, verbose_name='Категория', )
     description = models.CharField(max_length=300, verbose_name='Описание', blank=True, null=True)
 
     class Meta:
         verbose_name_plural = 'Подкатегории'
         verbose_name = 'Подкатегория'
 
+    def get_price_links(self):
+        for price in self.related_subcategory_models.all():
+            print(price)
+
     def __str__(self):
         return self.title
+
+
+def get_del_subcat():
+    return SubCategory.objects.get_or_create(title='DELETED')
 
 
 class PriceItem(models.Model):

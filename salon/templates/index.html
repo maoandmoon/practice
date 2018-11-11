@@ -129,25 +129,33 @@
                 <div class="col-md-12">
 
                     <div id="accordion" class="container wow fadeIn">
-                        {% for category, delay, price_items in price_set %}
+                        {% for category in categories %}
                             <div class="card wow fadeInUp">
-{#                            <div class="card wow fadeInUp" data-wow-delay="{{ delay }}">#}
                                 <div class="card-header border-0 rounded-0" id="heading-1">
                                     <h4 class="mt-3">
                                         <a class="text-dark font-weight-bold collapsed" role="button" data-toggle="collapse" href="#collapse-{{ category.pk }}" aria-expanded="false" aria-controls="collapse-{{ category.pk }}">
-
                                             <span class="plus pull-right" ><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>
-{#                                            <i class="fa  fa-2x fa-angle-up fa-pull-right"></i>#}
-                                            {{ category }}
+                                            {{ category.title }}
                                         </a>
                                     </h4>
                                 </div>
                                 <div id="collapse-{{ category.pk }}" class="collapse" data-parent="#accordion" aria-labelledby="heading-{{ category.pk }}">
                                     <div class="card-body">
-                                        {% for item in price_items %}
-                                            <hr>
-                                            <p>{{ item }}<span class="pull-right">{{ item.price }}</span></p>
-                                            {% endfor %}
+                                        {% for sub_cat in category.subcategory_set.all %}
+                                            {% if sub_cat.title != category.title %}
+                                                <h5 class="font-weight-bold mt-3 pb-2">{{ sub_cat.title }}</h5>
+                                                {% for item in sub_cat.related_subcategory_models.all %}
+                                                    <hr class="hr-dark">
+                                                    <p>{{ item }}<span class="pull-right">{{ item.price }}</span></p>
+                                                {% endfor %}
+                                                {% else %}
+                                                {% for item in category.category_linked_models.all %}
+                                                    <hr class="hr-dark">
+                                                    <p>{{ item }}<span class="pull-right">{{ item.price }}</span></p>
+                                                {% endfor %}
+                                            {% endif %}
+
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>

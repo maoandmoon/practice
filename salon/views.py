@@ -27,8 +27,9 @@ class Home(FormView):
     def get_context_data(self, **kwargs):
         context = super(Home, self).get_context_data(**kwargs)
         context['image_list'] = ImageCard.objects.all()
-        context['price_set'] = calculate_delay()
+        # context['price_set'] = calculate_delay()
         context['instagram_links'] = InstagramLink.objects.all()
+        context['categories'] = Category.objects.all().order_by("-id")
         # context
         return context
 

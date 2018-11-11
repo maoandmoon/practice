@@ -184,6 +184,17 @@ def calculate_delay(common_delay=1):
             for category in category_items]
 
 
+def sub_cat_list():
+    category_items = Category.objects.all()
+    price = []
+    for cat in category_items:
+        sub_cats = cat.subcategory_set.all()
+        for sub_cat in sub_cats:
+            price_list = sub_cat.related_subcategory_models.all()
+            price.append([cat.title, sub_cat, price_list])
+    return price
+
+
 def change_price(change_from, change_to):
     cat_from = Category.objects.get(title=change_from)
     cat_to, cat_created = Category.objects.get_or_create(title=change_to)
