@@ -40,7 +40,7 @@ gulp.task('django', function() {
 
     var runserver = spawn(
         'python',
-        ['manage.py', 'runserver','192.168.0.105:80'],
+        ['manage.py', 'runserver'],
         { stdio: 'inherit' }
     );
     runserver.on('close', function(code) {
@@ -55,7 +55,7 @@ gulp.task('django', function() {
 gulp.task('go', function() {
     livereload.listen();
     gulp.watch("salon/static/css/style.css", ["css-minify"]);
-    gulp.watch("salon/static/js/main.js", ['js-minify']);m
+    gulp.watch("salon/static/js/main.js", ['js-minify']);
     gulp.watch(["salon/static/js/main.js", "salon/templates/*", "salon/static/css/style.css"]).on('change', livereload.changed);
 });
 
