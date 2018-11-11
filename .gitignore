@@ -15,7 +15,6 @@ pip-delete-this-directory.txt
 *.pot
 
 # Django stuff:
-media/
 salon/migrations/
 local_settings.py
 db.sqlite3
