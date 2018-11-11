@@ -32,7 +32,7 @@ gulp.task('js-minify', function() {
 
 gulp.task('uri', function(){
   gulp.src(__filename)
-  .pipe(open({uri: 'http://practicelab.sytes.net'}));
+  .pipe(open({uri: 'http://127.0.0.1:8000/'}));
 });
 
 
