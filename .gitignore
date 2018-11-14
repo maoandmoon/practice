@@ -40,3 +40,5 @@ bower_components
 price.txt
 price.pdf
 
+# nginx
+*.sock

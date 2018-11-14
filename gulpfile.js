@@ -37,7 +37,6 @@ gulp.task('uri', function(){
 
 
 gulp.task('django', function() {
-
     var runserver = spawn(
         'C:\\Users\\maoan\\PycharmProjects\\PracticeSalon\\venv\\Scripts\\python',
         ['manage.py', 'runserver', '192.168.0.105:80'],
