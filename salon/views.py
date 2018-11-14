@@ -1,10 +1,14 @@
 from datetime import datetime
 from django.shortcuts import render
-from django.views.generic import FormView
+from django.views import generic
 from .calculate import calculate_delay
 from .models import *
 from .forms import *
 from dal_select2.views import Select2QuerySetView
+
+
+class GoogleView(generic.TemplateView):
+    template_name = "google974155f7650aa67c.html"
 
 
 class SubCategorySelect2(Select2QuerySetView):
@@ -19,7 +23,7 @@ class SubCategorySelect2(Select2QuerySetView):
         return qs
 
 
-class Home(FormView):
+class Home(generic.FormView):
     template_name = 'index.html'
     form_class = ContactModelForm
     success_url = '/'
@@ -27,7 +31,6 @@ class Home(FormView):
     def get_context_data(self, **kwargs):
         context = super(Home, self).get_context_data(**kwargs)
         context['image_list'] = ImageCard.objects.all()
-        # context['price_set'] = calculate_delay()
         context['instagram_links'] = InstagramLink.objects.all()
         context['categories'] = Category.objects.all().order_by("-id")
         # context
