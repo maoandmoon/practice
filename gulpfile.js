@@ -32,15 +32,15 @@ gulp.task('js-minify', function() {
 
 gulp.task('uri', function(){
   gulp.src(__filename)
-  .pipe(open({uri: 'http://127.0.0.1:8000/'}));
+  .pipe(open({uri: 'http://practicelab.sytes.net/'}));
 });
 
 
 gulp.task('django', function() {
 
     var runserver = spawn(
-        'python',
-        ['manage.py', 'runserver'],
+        'C:\\Users\\maoan\\PycharmProjects\\PracticeSalon\\venv\\Scripts\\python',
+        ['manage.py', 'runserver', '192.168.0.105:80'],
         { stdio: 'inherit' }
     );
     runserver.on('close', function(code) {

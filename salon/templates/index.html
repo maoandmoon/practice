@@ -14,7 +14,7 @@
     <!-- Material Design Bootstrap -->
     <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
     <!-- Your custom styles (optional) -->
-    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
     <!--  assuming your livereload server runs at localhost:35729 -->
     <script async type="text/javascript" src="//localhost:35729/livereload.js"></script>
 </head>
@@ -127,7 +127,6 @@
             <div class="row">
             <!--Grid column-->
                 <div class="col-md-12">
-
                     <div id="accordion" class="container wow fadeIn">
                         {% for category in categories %}
                             <div class="card wow fadeInUp">
@@ -236,89 +235,31 @@
                 <section id="reviews" class="text-center">
                     <a href="http://praktika-salon.ru/reviews/" target="_blank"><h2 class="font-weight-bold mb-5">Отзывы на Zoon.ru</h2></a>
                 </section>
-    <!--
-                <section class="section-feedback">
-                    <div class="col-lg-6 col-md-8">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3>
-                                        <div class="reviews-rating stars-5"></div>
-                                    </h3>
-                                    <p itemprop="reviewBody">Excellent work!</p>
-                                    <div class="footer pt-2">
-                                        <a>
-                                            <img class="avatar z-depth-1" src="https://mdbootstrap.com/img/Photos/Reviews/blank.jpg" alt="KRISTA MUTYABA">
-                                            <span class="author" itemprop="author">KRISTA MUTYABA</span>
-                                        </a>
-                                        <div class="pull-right text-muted" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">                 <meta itemprop="worstRating" content="1">                 <meta itemprop="bestRating" content="5">                 <meta itemprop="ratingValue" content="5">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="col-lg-6 col-md-8">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3>
-                                        <div class="reviews-rating stars-5"></div>
-                                    </h3>
-                                    <p itemprop="reviewBody">Great Work Thanx MDB Team Having A lot Fun !</p>
-                                    <div class="footer pt-2">
-                                        <a>
-                                            <img class="avatar z-depth-1" src="https://mdbootstrap.com/img/Photos/Reviews/blank.jpg" alt="IQRAR BANGASH">
-                                            <span class="author" itemprop="author">IQRAR BANGASH</span>
-                                        </a>
-                                        <div class="pull-right text-muted" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">                 <meta itemprop="worstRating" content="1">                 <meta itemprop="bestRating" content="5">                 <meta itemprop="ratingValue" content="5">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    <div class="col-lg-6 col-md-8">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h3>
-                                        <div class="reviews-rating stars-5"></div>
-                                    </h3>
-                                    <p itemprop="reviewBody">Perfect job MDB</p>
-                                    <div class="footer pt-2">
-                                        <a>
-                                            <img class="avatar z-depth-1" src="https://mdbootstrap.com/img/Photos/Reviews/blank.jpg" alt="KARIMI88">
-                                            <span class="author" itemprop="author">KARIMI88</span>
-                                        </a>
-                                        <div class="pull-right text-muted" itemprop="reviewRating" itemscope="" itemtype="http://schema.org/Rating">                 <meta itemprop="worstRating" content="1">                 <meta itemprop="bestRating" content="5">                 <meta itemprop="ratingValue" content="5">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                </section>
-    -->
-
-
 
         <hr class="my-5">
         <section id="partners" class="text-center">
         <h2 class="font-weight-bold mb-5">Партнеры</h2>
         <div class="container">
             <div class="row">
-                <div class="col-md-4 mb-1 ">
+                <div class="col-md-4 mb-1 brand-logo">
                     <img class="img-fluid w-25" src="{% static 'img/brands/cnd.jpg' %}">
                 </div>
-                <div class="col-md-4 mb-1">
+
+<div class="col-md-4 mb-1 brand-logo">
+                    <img class="img-fluid w-25" src="{% static 'img/brands/joico.jpg' %}">
+                </div>
+                <div class="col-md-4 mb-1 brand-logo">
                     <img class="img-fluid w-25" src="{% static 'img/brands/opi.jpg' %}">
                 </div>
-                <div class="col-md-4">
-                    <img class="img-fluid w-25" src="{% static 'img/brands/redken.jpg' %}">
-                </div>
-                <div class="col-md-4 ">
+                <div class="col-md-4 brand-logo">
                     <img class="img-fluid w-25" src="{% static 'img/brands/beautix.jpg' %}">
                 </div>
-                <div class="col-md-4 ">
+                <div class="col-md-4 brand-logo">
                     <img class="img-fluid w-25" src="{% static 'img/brands/gehwol.jpg' %}">
                 </div>
-                <div class="col-md-4 mb-1">
-                    <img class="img-fluid w-25" src="{% static 'img/brands/joico.jpg' %}">
+
+                                <div class="col-md-4 brand-logo">
+                    <img class="img-fluid w-25" src="{% static 'img/brands/redken.jpg' %}">
                 </div>
             </div>
         </div>
@@ -352,7 +293,7 @@
                             <label for="form-text">Сообщение</label>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-outline-info  btn-rounded btn-block z-depth-0 my-4 waves-effect" type="submit">Отправить</button>
+                            <button class="btn btn-outline-grey  btn-rounded btn-block z-depth-0 my-4 waves-effect " type="submit">Отправить</button>
                         </div>
                     </form>
                 </div>
@@ -362,19 +303,19 @@
                     <div class="row text-center">
                         <!--Grid column-->
                         <div class="col-lg-4 col-md-12 mb-3">
-                            <p><i class="fa fa-map fa-1x mr-2 grey-text"></i>пр-т Мира, 102 стр30, Москва, 129223</p>
+                            <p><i class="fa fa-map fa-1x mr-2 black-text"></i>пр-т Мира, 102 стр30, Москва, 129223</p>
                         </div>
                         <!--Grid column-->
                         <div class="col-lg-4 col-md-6 mb-3">
-                            <p><i class="fa fa-building fa-1x mr-2 grey-text"></i>10:00 - 21:00</p>
+                            <p><i class="fa fa-building fa-1x mr-2 black-text"></i>10:00 - 21:00</p>
                         </div>
                         <!--Grid column-->
                         <div class="col-lg-4 col-md-6 mb-3">
-                            <p><i class="fa fa-phone fa-1x mr-2 grey-text"></i>+7 (962) 944-40-47</p>
+                            <p><i class="fa fa-phone fa-1x mr-2 black-text"></i>+7 (962) 944-40-47</p>
                         </div>
                     </div>
                     <!--Yandex map-->
-                    <div id="map-container" class="z-depth-1-half map-container mb-5" style="height: 400px">
+                    <div id="map-container" class="z-depth-1-half map-container mb-5 map-layers-pane" style="height: 400px">
                         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6d651118b4583ce72df9d28f8d4bc4bb6816317a3961308a441a767ece6b9a01&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
                     </div>
                 </div>
@@ -382,46 +323,17 @@
         </section>
     </div>
 </main>
-<footer class="page-footer font-small unique-color-dark">
-    <!-- Social buttons -->
-    <div class="primary-color">
-        <div class="container">
-            <!--Grid row-->
-            <div class="row py-4 d-flex align-items-center">
-                <!--Grid column-->
-                <div class="col-md-6 col-lg-5 text-center text-md-left mb-4 mb-md-0">
-                    <h6 class="mb-0 white-text">Присоединяйтесь к нам в социальных сетях!</h6>
-                </div>
-                <!--Grid column-->
-                <div class="col-md-6 col-lg-7 text-center text-md-right">
-                    <!--Facebook-->
-                    <a class="fb-ic ml-0 " target="_blank" href="//facebook.com">
-                        <i class="fa fa-facebook white-text mr-4"> </i>
-                    </a>
-                    <!--Vk-->
-                    <a class="vk-ic" target="_blank" href="//vk.com/club165536773">
-                        <i class="fa fa-vk white-text mr-4"> </i>
-                    </a>
-                    <!--Google-->
-
-                    <!--Instagram-->
-                    <a class="ins-ic" href="//www.instagram.com/praktikabeauty/" target="_blank" >
-                        <i class="fa fa-instagram white-text mr-lg-4"> </i>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+<footer class="page-footer font-small stylish-color">
     <!--Footer Links-->
-    <div class="container mt-5 mb-4 text-center text-md-left">
-        <div class="row mt-3">
+    <div class="container mt-3 mb-4 text-center text-md-left">
+        <div class="row pt-3">
 
             <!--First column-->
             <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
               <h6 class="text-uppercase font-weight-bold">
                 <strong>Практика</strong>
               </h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
               <p>Лабаратория красоты на Проспекие Мира</p>
             </div>
             <!--/.First column-->
@@ -431,7 +343,7 @@
               <h6 class="text-uppercase font-weight-bold">
                 <strong>Наше меню</strong>
               </h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
               <p>
                 Цены на сайте могут не соответствовать.
                 Пожалуйста, уточняйте точную стоимость перед записью.
@@ -444,7 +356,7 @@
               <h6 class="text-uppercase font-weight-bold">
                 <strong>Полезные ссылки</strong>
               </h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
               <p>
                 <a href="#about">Цены на услуги</a>
               </p>
@@ -466,7 +378,7 @@
               <h6 class="text-uppercase font-weight-bold">
                 <strong>Контакты</strong>
               </h6>
-              <hr class="deep-purple accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
               <p>
                 <i class="fa fa-home mr-3"></i> пр-т Мира 102 стр30</p>
               <p>

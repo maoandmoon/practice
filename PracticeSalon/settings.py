@@ -7,26 +7,17 @@ For more information on this file, see
 https://docs.djangoproject.com/en/2.1/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/2.1/ref/settings/
+https://docs.djangoproject.cozzm/en/2.1/ref/settings/
 """
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
-
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'n2!+l23n=e@hb8qfmb6itqs0*!@h&7!4&!ul7zov*#t8c$q90x'
 
-# SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
-
-# INTERNAL_IPS = ['127.0.0.1', '192.168.0.105']
-# Application definition
 
 INSTALLED_APPS = [
     'dal',
@@ -40,8 +31,6 @@ INSTALLED_APPS = [
     'salon.apps.SalonConfig',
     'phonenumber_field',
 ]
-
-CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -74,18 +63,12 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'PracticeSalon.wsgi.application'
 
-# Database
-# https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
-# Password validation
-# https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -102,18 +85,16 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-# Internationalization
-# https://docs.djangoproject.com/en/2.1/topics/i18n/
-
-
 LOCALE_PATHS = (
     os.path.join(BASE_DIR, 'translations', 'locale'),
 )
 
 LANGUAGE_CODE = 'ru'
+
 LANGUAGES = (('ru', 'Russian'),)
+
 TIME_ZONE = 'Europe/Moscow'
-# TIME_ZONE = 'UTC+3'
+
 USE_TZ = True
 
 USE_I18N = True
@@ -129,10 +110,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 EMAIL_USE_TLS = True
+
 EMAIL_HOST = 'smtp.gmail.com'
+
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'maybealldays@gmail.com'
-EMAIL_HOST_PASSWORD = 'Qas61qas'
-DEFAULT_FROM_EMAIL = 'maybealldays@gmail.com'
-DEFAULT_TO_EMAIL = 'lera.myasishheva.94@mail.ru'
-PRACTICE_ADMINS = ['lera.myasishheva.94@mail.ru']
+
+try:
+    from local_settings import *
+except ImportError:
+    pass
