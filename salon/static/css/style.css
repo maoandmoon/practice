@@ -27,7 +27,6 @@ header,
     font-weight: 300;
     font-style: italic;
 }
-
 body{
     font-family: 'Cormorant Garamond', "Opinion Pro", "Roboto", sans-serif;
     /*font-family: "Opinion Pro", 'Encode Sans Semi Condensed', Verdana, sans-serif;*/
@@ -85,10 +84,10 @@ body{
 .brand-logo img{
     filter: opacity(50%);
 }
-
 .brand-logo:hover{
     -webkit-filter: grayscale(0%);
 }
+
 .brand-logo img:hover{
     filter: opacity(100%);
 }
