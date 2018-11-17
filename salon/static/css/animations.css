@@ -20,8 +20,7 @@
     z-index: 9999;
     background: var(--main-color);
 }
-
-.preloader h1 {
+h1.err {
     margin: 100px auto 0 auto;
     color: var(--stroke-color);
     font-family: 'Encode Sans Semi Condensed', Verdana, sans-serif;
@@ -31,15 +30,14 @@
     text-align: center;
 }
 
-.preloader h2 {
+h2.err {
     margin: 20px auto 30px auto;
     font-family: 'Encode Sans Semi Condensed', Verdana, sans-serif;
     font-size: 1.5rem;
     font-weight: 200;
     text-align: center;
 }
-
-.preloader h1, .preloader h2 {
+h1.err, .preloader.err {
     -webkit-transition: opacity 0.5s linear, margin-top 0.5s linear; /* Safari */
     transition: opacity 0.5s linear, margin-top 0.5s linear;
 }
