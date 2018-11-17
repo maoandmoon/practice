@@ -1,0 +1,50 @@
+<body>
+	<main id="centerLayer">
+		<div class="main-box">
+			<img src="logo-practice.jpg">
+		</div>
+		<div class="outer-box">
+			<div class="go outer"></div>
+		</div>
+	</main>
+<style type="text/css">
+img{
+	width: 100%
+}
+.outer-box{
+	z-index: 99999;
+	position: absolute;
+ 	padding-top:0;
+ 	margin: 21% 40%;  
+	width: 15%;
+	animation: go-rotate 1.5s infinite linear;
+}
+.main-box {
+ 	position: absolute;
+ 	padding-top: 10%; 
+ 	margin: 0 42%;  
+	width: 15%;
+	transform-style: preserve-3d;
+	animation: main-rotate 3s infinite linear;
+}
+.go {	
+	position: absolute;
+	width: 100px;
+	height: 100px;
+	opacity: 0.7;
+	border-radius:50%;
+   	transform: translateY(4%);
+	background: #463E48;
+}
+@keyframes main-rotate {
+	100% {
+		transform: rotateY(-360deg);
+	}
+}
+@keyframes go-rotate {
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+</style>
+</body>

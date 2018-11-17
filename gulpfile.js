@@ -1,21 +1,14 @@
-var gulp = require('gulp');
-var watch = require('gulp-watch');
-var livereload = require('gulp-livereload');
-const imagemin = require('gulp-imagemin');
-const autoprefixer = require('gulp-autoprefixer');
+const gulp = require('gulp');
+const watch = require('gulp-watch');
+const livereload = require('gulp-livereload');
 const cssmin = require('gulp-cssmin');
 const rename = require('gulp-rename');
 const minify = require('gulp-minify');
-var spawn = require('child_process').spawn;
-var open = require('gulp-open');
+const spawn = require('child_process').spawn;
+const open = require('gulp-open');
+// const imagemin = require('gulp-imagemin');
+// const autoprefixer = require('gulp-autoprefixer');
 
-
-var gzip_options = {
-    threshold: '1kb',
-    gzipOptions: {
-        level: 9
-    }
-};
 
 gulp.task('css-minify', function() {
     gulp.src('./salon/static/css/style.css')
@@ -30,17 +23,12 @@ gulp.task('js-minify', function() {
         .pipe(gulp.dest('./salon/static/js'))
 });
 
-gulp.task('uri', function(){
-  gulp.src(__filename)
-  .pipe(open({uri: 'http://practicelab.sytes.net/'}));
-});
-
 
 gulp.task('django', function() {
-    var runserver = spawn(
+    const runserver = spawn(
         'C:\\Users\\maoan\\PycharmProjects\\PracticeSalon\\venv\\Scripts\\python',
-        ['manage.py', 'runserver', '192.168.0.105:80'],
-        { stdio: 'inherit' }
+        ['manage.py', 'runserver', '192.168.0.105:8000'],
+        {stdio: 'inherit'}
     );
     runserver.on('close', function(code) {
         if (code !== 0) {
@@ -53,9 +41,14 @@ gulp.task('django', function() {
 
 gulp.task('go', function() {
     livereload.listen();
-    gulp.watch("salon/static/css/style.css", ["css-minify"]);
-    gulp.watch("salon/static/js/main.js", ['js-minify']);
-    gulp.watch(["salon/static/js/main.js", "salon/templates/*", "salon/static/css/style.css"]).on('change', livereload.changed);
+    watch("salon/static/css/style.css", ["css-minify"]);
+    watch("salon/static/js/main.js", ['js-minify']);
+    watch(["salon/static/js/main.js", "salon/templates/*", "salon/static/css/style.css"]).on('change', livereload.changed);
+});
+
+gulp.task('uri', function(){
+  gulp.src(__filename)
+  .pipe(open({uri: 'http://192.168.0.105:8000/'}));
 });
 
 gulp.task('default', ['django', 'go', 'uri']);
