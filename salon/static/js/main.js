@@ -1,3 +1,14 @@
+$(function() {
+    setTimeout(function(){
+         $('.preloader').fadeOut('slow');
+        }, 2000);
+});
+
+// $(window).load(function() {
+// //
+// // //     $('body').removeClass('loading');
+// //
+// // });
 function scrollDelay(offset){
     offset = Math.round(offset);
     let targetOffset = Math.max(pageYOffset, offset) - Math.min(pageYOffset, offset);

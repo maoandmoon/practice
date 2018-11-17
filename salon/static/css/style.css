@@ -91,3 +91,6 @@ body{
 .brand-logo img:hover{
     filter: opacity(100%);
 }
+.pl-10{
+    padding-left: 10%;
+}
