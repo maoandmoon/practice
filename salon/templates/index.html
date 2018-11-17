@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Практика - Лаборатория красоты</title>
-    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
     <!-- Bootstrap core CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
+    <!--  Other custom styles -->
     <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
     <!--  assuming your livereload server runs at localhost:35729 -->
-    <script async type="text/javascript" src="//localhost:35729/livereload.js"></script>
+    {% if debug %}
+        <script async type="text/javascript" src="//localhost:35729/livereload.js"></script>
+    {% endif %}
+
 </head>
 <body>
 <header>
@@ -32,10 +35,7 @@
             <!-- Collapsible content -->
             <div class="collapse navbar-collapse" id="basicNav">
                 <!-- Links -->
-                <ul class="nav-justified navbar-nav m-auto smooth-scroll text-uppercase">
-{#                    <li class="nav-item d-none d-lg-block d-xl-block">#}
-{#                        <a data-scroll class="nav-link text-dark font-weight-bold" href="#intro">Практика</a>#}
-{#                    </li>#}
+                <ul class="navbar-nav m-auto smooth-scroll text-uppercase">
                     <li class="nav-item m-2">
                         <a data-scroll class="nav-link text-dark font-weight-bold" href="#about">О нас</a>
                     </li>
@@ -60,9 +60,7 @@
                             <a class="nav-link text-dark font-weight-bold" target="_blank" href="{% url 'admin:index' %}">Админка</a>
                         </li>
                     {% endif %}
-
                 </ul>
-
                 <!-- Social Icon  -->
                 <ul class="navbar-nav nav-flex-icons">
                     <li class="nav-item">
@@ -79,7 +77,6 @@
 
         </div>
     </nav>
-
     <!--Mask-->
     <div id="intro" class="view">
         <div class="mask rgba-white-strong">
@@ -93,8 +90,7 @@
                         <!-- Description -->
                         <h4 class="text-lo my-4">Ваша красота - наша практика</h4>
                         <!--<a><i class="fa fa-angle-down fa-5x"></i></a>-->
-                        <!--<button type="button" class="btn btn-outline-white animated fadeIn" data-scroll onclick="location.href='#about'">Узнать больше</button>-->
-                        <a href="#about" data-scroll class="text-dark animated slow bounceOutDown infinite"  ><i class="fa fa-angle-down fa-4x"></i></a>
+                        <a href="#about" data-scroll class="text-dark animated slow bounceOutDown infinite"><i class="fa fa-angle-down fa-4x"></i></a>
                     </div>
                 </div>
             </div>
@@ -133,7 +129,7 @@
                                 <div class="card-header border-0 rounded-0" id="heading-1">
                                     <h4 class="mt-3">
                                         <a class="text-dark font-weight-bold collapsed" role="button" data-toggle="collapse" href="#collapse-{{ category.pk }}" aria-expanded="false" aria-controls="collapse-{{ category.pk }}">
-                                            <span class="plus pull-right" ><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"/></svg></span>
+                                            <span class="plus pull-right" ><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M14 11.293l10.293-10.293.707.707-10.293 10.293 10.293 10.293-.707.707-10.293-10.293-10.293 10.293-.707-.707 10.293-10.293-10.293-10.293.707-.707 10.293 10.293z"></path></svg></span>
                                             {{ category.title }}
                                         </a>
                                     </h4>
@@ -166,107 +162,98 @@
         <hr class="my-5">
 
         <section id="gallery">
-          <!-- Heading -->
-          <h2 class="mb-5 font-weight-bold text-center">Салон</h2>
-          <!--Grid row-->
-          <div class="row">
-                <!--Grid column-->
-              <div class="col-lg-11 col-md-12 mx-auto">
-                  <!--Carousel Wrapper-->
-                  <div id="carousel-example-1z" class="carousel slide " data-ride="carousel">
-                    <!--Indicators-->
-                      <ol class="carousel-indicators">
-                          <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-                          <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-                          <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-                      </ol>
+            <!-- Heading -->
+            <h2 class="mb-5 font-weight-bold text-center">Салон</h2>
+            <!--Grid row-->
+            <div class="row">
+              <!--Grid column-->
+                <div class="col-lg-11 col-md-12 mx-auto">
+                    <!--Carousel Wrapper-->
+                    <div id="carousel-example-1z" class="carousel slide " data-ride="carousel">
+                        <!--Indicators-->
+                        <ol class="carousel-indicators">
+                            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+                            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+                        </ol>
                         <!--Slides-->
-                      <div class="carousel-inner" role="listbox">
-                          {% for image in image_list %}
-                              {% ifequal image image_list.first %}
-                                  <div class="carousel-item active">
-                                      <img class="d-block w-100" src="{{ image.thumb.url }}" alt="First slide">
-                                  </div>
-                              {% else %}
-                                  <div class="carousel-item">
-                                      <img class="d-block w-100" src="{{ image.thumb.url }}" alt="Second slide">
-                                  </div>
-                              {% endifequal %}
-                          {% endfor %}
-                      </div>
-
-                      <!--Controls-->
-                      <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Вперед</span>
-                      </a>
-                      <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                          <span class="sr-only">Назад</span>
-
-                      </a>
-                  </div>
+                        <div class="carousel-inner" role="listbox">
+                            {% for image in image_list %}
+                                {% ifequal image image_list.first %}
+                                    <div class="carousel-item active">
+                                        <img class="d-block w-100" src="{{ image.thumb.url }}" alt="First slide">
+                                    </div>
+                                {% else %}
+                                    <div class="carousel-item">
+                                        <img class="d-block w-100" src="{{ image.thumb.url }}" alt="Second slide">
+                                    </div>
+                                {% endifequal %}
+                            {% endfor %}
+                        </div>
+                        <!--Controls-->
+                        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Вперед</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Назад</span>
+                        </a>
+                    </div>
                 </div>
-                </div>
-                <div class="container text-center mt-5">
-
+            </div>
+            <div class="container text-center mt-5">
                 <a href="https://www.instagram.com/praktikabeauty/" target="_blank" >
-                    <img src="{% static '/img/Instagram2016.png' %}" width="175" class="mb-5 " style="border-radius: 9px;">
+                    <img src="{% static '/img/Instagram.png' %}" width="175" class="mb-5 " style="border-radius: 9px;">
                 </a>
                 <div class="row">
                     {% for link in instagram_links %}
                         <div class="col-lg-4 col-md-6 p-0 mt-5">
-                        <!--Card image-->
-                          <div class="view overlay">
-                            <img src="{{ link.thumb.url }}" class="img-thumbnail mx-auto d-block" alt="photo">
-                            <a href="{{ link.link }}" target="_blank">
-                              <div class="mask rgba-white-slight"></div>
-                            </a>
-                          </div>
-
+                            <!--Card image-->
+                            <div class="view overlay">
+                                <img src="{{ link.thumb.url }}" class="img-thumbnail mx-auto d-block" alt="photo">
+                                <a href="{{ link.link }}" target="_blank">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
                         </div>
                     {% endfor %}
                 </div>
             </div>
-
         </section>
-        <hr class="my-5">    <!--Section: partners-->
-
-                <section id="reviews" class="text-center">
-                    <a href="http://praktika-salon.ru/reviews/" target="_blank"><h2 class="font-weight-bold mb-5">Отзывы на Zoon.ru</h2></a>
-                </section>
-
         <hr class="my-5">
+        <!--Section: reviews-->
+        <section id="reviews" class="text-center">
+            <a href="http://praktika-salon.ru/reviews/" target="_blank"><h2 class="font-weight-bold mb-5">Отзывы на Zoon.ru</h2></a>
+        </section>
+        <hr class="my-5">
+        <!--Section: partners-->
         <section id="partners" class="text-center">
-        <h2 class="font-weight-bold mb-5">Партнеры</h2>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4 mb-1 brand-logo">
-                    <img class="img-fluid w-25" src="{% static 'img/brands/cnd.jpg' %}">
-                </div>
-
-<div class="col-md-4 mb-1 brand-logo">
-                    <img class="img-fluid w-25" src="{% static 'img/brands/joico.jpg' %}">
-                </div>
-                <div class="col-md-4 mb-1 brand-logo">
-                    <img class="img-fluid w-25" src="{% static 'img/brands/opi.jpg' %}">
-                </div>
-                <div class="col-md-4 brand-logo">
-                    <img class="img-fluid w-25" src="{% static 'img/brands/beautix.jpg' %}">
-                </div>
-                <div class="col-md-4 brand-logo">
-                    <img class="img-fluid w-25" src="{% static 'img/brands/gehwol.jpg' %}">
-                </div>
-
-                                <div class="col-md-4 brand-logo">
-                    <img class="img-fluid w-25" src="{% static 'img/brands/redken.jpg' %}">
+            <h2 class="font-weight-bold mb-5">Партнеры</h2>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 mb-1 brand-logo">
+                        <img class="img-fluid w-25" src="{% static 'img/cnd.jpg' %}">
+                    </div>
+                    <div class="col-md-4 mb-1 brand-logo">
+                        <img class="img-fluid w-25" src="{% static 'img/joico.jpg' %}">
+                    </div>
+                    <div class="col-md-4 mb-1 brand-logo">
+                        <img class="img-fluid w-25" src="{% static 'img/opi.jpg' %}">
+                    </div>
+                    <div class="col-md-4 brand-logo">
+                        <img class="img-fluid w-25" src="{% static 'img/beautix.jpg' %}">
+                    </div>
+                    <div class="col-md-4 brand-logo">
+                        <img class="img-fluid w-25" src="{% static 'img/gehwol.jpg' %}">
+                    </div>
+                    <div class="col-md-4 brand-logo">
+                        <img class="img-fluid w-25" src="{% static 'img/redken.jpg' %}">
+                    </div>
                 </div>
             </div>
-        </div>
         </section>
         <hr class="my-5">
-
-
         <section id="contact">
             <!-- Heading -->
             <h2 class="mb-5 font-weight-bold text-center">Контакты</h2>
@@ -316,7 +303,6 @@
                     </div>
                     <!--Yandex map-->
                     <div id="map-container" class="z-depth-1-half map-container mb-5 map-layers-pane" style="height: 400px">
-{#                        <iframe src="https://snazzymaps.com/embed/113314" width="100%" height="398px" style="border:none;"></iframe>#}
                         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6d651118b4583ce72df9d28f8d4bc4bb6816317a3961308a441a767ece6b9a01&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
                     </div>
                 </div>
@@ -328,7 +314,6 @@
     <!--Footer Links-->
     <div class="container mt-3 mb-4 text-center text-md-left">
         <div class="row pt-3">
-
             <!--First column-->
             <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
               <h6 class="text-uppercase font-weight-bold">
@@ -337,8 +322,6 @@
               <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
               <p>Лабаратория красоты на Проспекие Мира</p>
             </div>
-            <!--/.First column-->
-
             <!--Second column-->
             <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 class="text-uppercase font-weight-bold">
@@ -350,8 +333,6 @@
                 Пожалуйста, уточняйте точную стоимость перед записью.
                 </p>
             </div>
-            <!--/.Second column-->
-
             <!--Third column-->
             <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
               <h6 class="text-uppercase font-weight-bold">
@@ -370,10 +351,7 @@
               <p>
                 <a href="#contact">Контакты</a>
               </p>
-
             </div>
-            <!--/.Third column-->
-
             <!--Fourth column-->
             <div class="col-md-4 col-lg-3 col-xl-3">
               <h6 class="text-uppercase font-weight-bold">
@@ -387,8 +365,6 @@
               <p>
                 <i class="fa fa-phone mr-3"></i> +7 962 944 40 47</p>
             </div>
-            <!--/.Fourth column-->
-
         </div>
       </div>
     <!-- Copyright -->
