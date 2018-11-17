@@ -48,12 +48,15 @@ h1.err, .preloader.err {
 }
 
 .gears {
-    padding-top: 30%;
     position: relative;
     margin: 0 auto;
     width: auto;
     height: 0;
 }
+.gears.loads {
+    padding-top: 30%;
+}
+
 
 .gear {
     position: relative;
