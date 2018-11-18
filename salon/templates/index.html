@@ -281,7 +281,7 @@
         </section>
         <hr class="my-5">
         <section id="reviews" class="text-center">
-            <h2 class="font-weight-bold mt-4">Обратная связь</h2>
+            <h2 class="font-weight-bold mb-5">Обратная связь</h2>
             <div class="container">
                 <div class="row d-flex mt-4">
                 <div class="col-md-6 text-left">
@@ -303,7 +303,7 @@
                     <!-- Form contact -->
                     <form action="." method="post" class="border border-light p-5 z-depth-1 font-weight-bold">
                         {% csrf_token %}
-                        <p class="h4 mb-4 text-center">Заказать обратный звонок</p>
+                        <p class="h4 mb-4 text-center font-weight-bold">Заказать обратный звонок</p>
                         {{ form.errors }}
                         <div class="md-form">
                             <input type="text" id="form-name" name="name" required class="form-control">
