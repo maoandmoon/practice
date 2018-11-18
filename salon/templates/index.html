@@ -302,7 +302,7 @@
                 <!--Grid column-->
                 <div class="col-lg-5 col-md-12">
                     <!-- Form contact -->
-                    <form action="." method="post" class="border border-light p-5 z-depth-1">
+                    <form action="." method="post" class="border border-light p-5 z-depth-1 font-weight-bold">
                         {% csrf_token %}
                         <p class="h4 mb-4 text-center">Заказать обратный звонок</p>
                         {{ form.errors }}
@@ -321,9 +321,7 @@
                         </div>
                         <div class="text-center">
 
-                            <button type="submit" class="btn btn-outline-cyan btn-block z-depth-0 m-auto waves-effect waves-light btn-outline-cyan text-uppercase roboto ">
-                    Отправить
-                            </button>
+                            <button type="submit" class="btn btn-outline-primary btn-block z-depth-0 m-auto waves-effect waves-light text-uppercase roboto  font-weight-bold">Отправить</button>
 
                         </div>
                     </form>
