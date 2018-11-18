@@ -79,13 +79,14 @@ body{
     position: relative;
     -webkit-filter: grayscale(50%);
 }
-/*.map-label{*/
-    /*z-index: 9999;*/
-    /*position: absolute;*/
-    /*left: 200px;*/
-    /*top: 100px;*/
-    /*background-color: white;*/
-/*}*/
+#map-label{
+    z-index: 9999;
+    position: absolute;
+    left: 100px;
+    top: 100px;
+    padding: 15px 15px 15px 0;
+    background-color: white;
+}
 .brand-logo{
     -webkit-filter: grayscale(100%);
 }

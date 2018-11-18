@@ -330,36 +330,23 @@
 
         <section id="contact">
             <!-- Heading -->
-            <h2 class="mb-5 font-weight-bold text-center">Контакты</h2>
+{#            <h2 class="mb-5 font-weight-bold text-center">Контакты</h2>#}
             <!--Grid row-->
             <div class="row">
                 <!--Grid column-->
-                <div class="col-md-12">
+                <div class="col-md-12" style="padding: 0">
                     <!--Grid row-->
-                    <div class="row text-center">
-                        <!--Grid column-->
-                        <div class="col-lg-4 col-md-12 mb-3">
-                            <p><i class="fa fa-map fa-1x mr-2 black-text"></i>Проспект Мира, 102 строение30</p>
-                        </div>
-                        <!--Grid column-->
-                        <div class="col-lg-4 col-md-6 mb-3">
-                            <p><i class="fa fa-building fa-1x mr-2 black-text"></i>10:00 - 21:00</p>
-                        </div>
-                        <!--Grid column-->
-                        <div class="col-lg-4 col-md-6 mb-3">
-                            <p><i class="fa fa-phone fa-1x mr-2 black-text"></i>+7 (962) 944-40-47</p>
-                        </div>
-                    </div>
                     <!--Yandex map-->
-                    <div id="map-container" class="z-depth-1-half map-container map-layers-pane my-5" style="height: 400px">
+                    <div id="map-container" class="map-layers-pane" style="height: 500px">
 
 {#                        <iframe src="https://yandex.ru/map-widget/v1/-/CBFq7JEv~C" width="560" height="400" frameborder="1" allowfullscreen="true"></iframe>#}
-                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6d651118b4583ce72df9d28f8d4bc4bb6816317a3961308a441a767ece6b9a01&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
-{#                        <div class="map-label">#}
-{#                            <p><i class="fa fa-map fa-1x mr-2 black-text"></i>Проспект Мира, 102 строение30</p>#}
-{#                            <p><i class="fa fa-building fa-1x mr-2 black-text"></i>10:00 - 21:00</p>#}
-{#                            <p><i class="fa fa-phone fa-1x mr-2 black-text"></i>+7 (962) 944-40-47</p>#}
-{#                        </div>#}
+                        <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6d651118b4583ce72df9d28f8d4bc4bb6816317a3961308a441a767ece6b9a01&amp;width=100%25&amp;height=100%25&amp;lang=ru_RU&amp;scroll=true"></script>
+                        <div id="map-label" style="z-index: 9999; position: absolute; top:100px; left: 100px; background: white;padding: 25px 25px 10px 25px;" >
+                            <h4 class="font-weight-bold">Контакты</h4>
+                            <p><i class="fa fa-map fa-1x mr-2 black-text"></i>Проспект Мира, 102 строение30</p>
+                            <p><i class="fa fa-building fa-1x mr-2 black-text"></i>10:00 - 21:00</p>
+                            <p><i class="fa fa-phone fa-1x mr-2 black-text"></i>+7 (962) 944-40-47</p>
+                        </div>
 
                     </div>
                 </div>
