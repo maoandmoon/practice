@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     {% load static %}
+    <link rel="stylesheet" type="text/css" href="salon/static/css/style.css"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -25,15 +26,14 @@
 </head>
 
 <body>
-<!-- preloader -->
+<!--
 <div class="preloader loading">
     <div id="centerLayer">
 		<div class="main-box">
 			<img class="loader-logo" src="{% static '/img/logo.svg' %}">
 		</div>
     </div>
-    <!-- gears-->
-    <div class="gears loads">
+    <div class="gears loads ">
         <div class="gear one">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -51,6 +51,7 @@
         </div>
     </div>
 </div>
+-->
 <header>
     <!--Navbar-->
     <nav class="navbar navbar-expand-lg fixed-top scrolling-navbar justify-content-md-center justify-content-start">
@@ -239,7 +240,7 @@
                     {% for link in instagram_links %}
                         <div class="col-lg-4 col-md-6 p-0 mt-5">
                             <!--Card image-->
-                            <div class="view overlay">
+                            <div class="view overlay waves-effect">
                                 <img src="{{ link.thumb.url }}" class="img-thumbnail mx-auto d-block " alt="photo">
                                 <a href="{{ link.link }}" target="_blank">
                                     <div class="mask rgba-white-slight"></div>
@@ -253,12 +254,22 @@
         <hr class="my-5">
         <!--Section: reviews-->
         <section id="reviews" class="text-center">
-            <a href="http://praktika-salon.ru/reviews/" target="_blank"><h2 class="font-weight-bold mb-5">Отзывы на Zoon.ru</h2></a>
+            <h2 class="font-weight-bold mt-4">Отзывы</h2>
+            <div class="row d-flex justify-content-center mt-4">
+                <div class="col-md-6">
+                    <p class="grey-text" >Вы всегда можете узнать о нашей работе по честным отзывам наших клиентов.
+                     А также оставить свои пожелания и коментарии, после посещения нашей лаборатории красоты.</p>
+                    <a href="http://praktika-salon.ru/reviews/" target="_blank"  class="btn waves-effect waves-light btn-outline-cyan mt-4">
+                        <h5 class="text-uppercase roboto">Перейти к отзывам</h5>
+                        <img src="{% static '/img/zoon.png' %}">
+                    </a>
+                </div>
+            </div>
         </section>
         <hr class="my-5">
         <!--Section: partners-->
         <section id="partners" class="text-center">
-            <h2 class="font-weight-bold mb-5">Партнеры</h2>
+            <h2 class="font-weight-bold mb-5">Наши партнеры</h2>
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-1 brand-logo">
@@ -283,7 +294,7 @@
             </div>
         </section>
         <hr class="my-5">
-        <section id="contact">
+        <section id="contact ">
             <!-- Heading -->
             <h2 class="mb-5 font-weight-bold text-center">Контакты</h2>
             <!--Grid row-->
@@ -291,7 +302,7 @@
                 <!--Grid column-->
                 <div class="col-lg-5 col-md-12">
                     <!-- Form contact -->
-                    <form action="." method="post" class="border border-light p-5 z-depth-1-half">
+                    <form action="." method="post" class="border border-light p-5 z-depth-1">
                         {% csrf_token %}
                         <p class="h4 mb-4 text-center">Заказать обратный звонок</p>
                         {{ form.errors }}
@@ -309,7 +320,11 @@
                             <label for="form-text">Сообщение</label>
                         </div>
                         <div class="text-center">
-                            <button class="btn btn-outline-grey  btn-rounded btn-block z-depth-0 my-4 waves-effect " type="submit">Отправить</button>
+
+                            <button type="submit" class="btn btn-outline-cyan btn-block z-depth-0 m-auto waves-effect waves-light btn-outline-cyan text-uppercase roboto ">
+                    Отправить
+                            </button>
+
                         </div>
                     </form>
                 </div>
@@ -319,7 +334,7 @@
                     <div class="row text-center">
                         <!--Grid column-->
                         <div class="col-lg-4 col-md-12 mb-3">
-                            <p><i class="fa fa-map fa-1x mr-2 black-text"></i>пр-т Мира, 102 стр30, Москва, 129223</p>
+                            <p><i class="fa fa-map fa-1x mr-2 black-text"></i>Проспект Мира, 102 строение30</p>
                         </div>
                         <!--Grid column-->
                         <div class="col-lg-4 col-md-6 mb-3">
@@ -331,7 +346,7 @@
                         </div>
                     </div>
                     <!--Yandex map-->
-                    <div id="map-container" class="z-depth-1-half map-container mb-5 map-layers-pane" style="height: 400px">
+                    <div id="map-container" class="z-depth-1-half map-container map-layers-pane" style="height: 400px">
                         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6d651118b4583ce72df9d28f8d4bc4bb6816317a3961308a441a767ece6b9a01&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
                     </div>
                 </div>

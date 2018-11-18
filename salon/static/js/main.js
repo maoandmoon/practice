@@ -1,8 +1,8 @@
-$(function() {
-    setTimeout(function(){
-         $('.preloader').fadeOut();
-        }, 2000);
-});
+// $(function() {
+//     setTimeout(function(){
+//          $('.preloader').fadeOut();
+//         }, 2000);
+// });
 
 function scrollDelay(offset){
     offset = Math.round(offset);

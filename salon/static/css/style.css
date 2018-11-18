@@ -94,3 +94,18 @@ body{
 .pl-10{
     padding-left: 10%;
 }
+
+.roboto{
+    font-style: normal;
+    font-weight: normal;
+    font-size: large;
+    font-family: 'Roboto', 'Opinion Pro', Verdana, sans-serif;!important;
+}
+
+a.btn.roboto h4{
+    font-weight: bold;
+}
+
+p.grey-text {
+    font-size: 1.3rem;!important;
+}
