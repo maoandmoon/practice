@@ -115,7 +115,7 @@
                         <!-- Divider -->
                         <hr class="hr-dark">
                         <!-- Description -->
-                        <h4 class="text-lo my-4">Ваша красота - наша практика</h4>
+                        <h4 class="text-uppercase my-4">Ваша красота - наша практика</h4>
                         <!--<a><i class="fa fa-angle-down fa-5x"></i></a>-->
                         <a href="#about" data-scroll class="text-dark animated slow bounceOutDown infinite"><i class="fa fa-angle-down fa-4x"></i></a>
                     </div>
@@ -229,39 +229,6 @@
                     </div>
                 </div>
             </div>
-            <div class="container-fluid text-center mt-5">
-                <a href="https://www.instagram.com/praktikabeauty/" target="_blank" >
-                    <img src="{% static '/img/Instagram.png' %}" width="175" class="mb-5 " style="border-radius: 9px;">
-                </a>
-                <div class="row">
-                    {% for link in instagram_links %}
-                        <div class="col-lg-4 col-md-6 p-0 mt-5">
-                            <!--Card image-->
-                            <div class="view overlay waves-effect">
-                                <img src="{{ link.thumb.url }}" class="img-thumbnail mx-auto d-block " alt="photo">
-                                <a href="{{ link.link }}" target="_blank">
-                                    <div class="mask rgba-white-slight"></div>
-                                </a>
-                            </div>
-                        </div>
-                    {% endfor %}
-                </div>
-            </div>
-        </section>
-        <hr class="my-5">
-        <!--Section: reviews-->
-        <section id="reviews" class="text-center">
-            <h2 class="font-weight-bold mt-4">Отзывы</h2>
-            <div class="row d-flex justify-content-center mt-4">
-                <div class="col-md-6">
-                    <p class="grey-text" >Вы всегда можете узнать о нашей работе по честным отзывам наших клиентов.
-                     А также оставить свои пожелания и коментарии, после посещения нашей лаборатории красоты.</p>
-                    <a href="http://praktika-salon.ru/reviews/" target="_blank"  class="btn waves-effect waves-light btn-outline-cyan mt-4">
-                        <h5 class="text-uppercase roboto">Перейти к отзывам</h5>
-                        <img src="{% static '/img/zoon.png' %}">
-                    </a>
-                </div>
-            </div>
         </section>
         <hr class="my-5">
         <!--Section: partners-->
@@ -291,38 +258,57 @@
             </div>
         </section>
         <hr class="my-5">
+        <!--Section: reviews-->
+        <section id="instagram" class="text-center">
+            <div class="container-fluid text-center mt-5">
+                <a href="https://www.instagram.com/praktikabeauty/" target="_blank" >
+                    <img src="{% static '/img/Instagram.png' %}" width="175" class="mb-5 " style="border-radius: 9px;">
+                </a>
+                <div class="row">
+                    {% for link in instagram_links %}
+                        <div class="col-lg-4 col-md-6 p-0 mt-5">
+                            <!--Card image-->
+                            <div class="view overlay waves-effect">
+                                <img src="{{ link.thumb.url }}" class="img-thumbnail mx-auto d-block " alt="photo">
+                                <a href="{{ link.link }}" target="_blank">
+                                    <div class="mask rgba-white-slight"></div>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+        <hr class="my-5">
+        <section id="reviews" class="text-center">
+            <h2 class="font-weight-bold mt-4">Отзывы</h2>
+            <div class="row d-flex justify-content-center mt-4">
+                <div class="col-md-6">
+
+                    <a href="http://praktika-salon.ru/reviews/" target="_blank"  class="btn waves-effect waves-light btn-outline-grey my-5">
+                        <h5 class="text-uppercase roboto">Перейти к отзывам</h5>
+                        <img class="brand-logo" src="{% static '/img/zooncolor.jpg' %}" width="150">
+                    </a>
+                    <p class="grey-text" >Ежедневно команда Лаборатории красоты «Практика» совершенствуется,
+                        чтобы предоставлять исключительно комфортный и высококлассный сервис для каждого посетителя!
+                        Вы можете ознакомиться с отзывами о нас на платформе zoon.ru.
+                        Нам очень важно мнение каждого из вас!
+                        Если у Вас есть какие-либо пожелания касательно улучшения  качества предоставляемых услуг,
+                        пожалуйста, воспользуйтесь окном «обратной связи».
+
+                        В случае возникновения вопросов сотрудничества и иного характера,
+                        пожалуйста, свяжитесь с нами по электронной почте:  <a href="mailto:praktikabeauty@gmail.com?subject=PracticeLab">praktikabeauty@gmail.com</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <hr class="my-5">
+
         <section id="contact">
             <!-- Heading -->
             <h2 class="mb-5 font-weight-bold text-center">Контакты</h2>
             <!--Grid row-->
             <div class="row">
-                <!--Grid column-->
-                <div class="col-lg-5 col-md-12">
-                    <!-- Form contact -->
-                    <form action="." method="post" class="border border-light p-5 z-depth-1 font-weight-bold">
-                        {% csrf_token %}
-                        <p class="h4 mb-4 text-center">Заказать обратный звонок</p>
-                        {{ form.errors }}
-                        <div class="md-form">
-                            <input type="text" id="form-name" name="name" required class="form-control">
-                            <label for="form-name">Имя</label>
-                        </div>
-                        <div class="md-form">
-                            <input type="text" id="form-phone" name="phone" required class="form-control">
-
-                            <label for="form-phone">Телефон</label>
-                        </div>
-                        <div class="md-form">
-                            <textarea type="text" id="form-text" name="message" class="form-control md-textarea" rows="3"></textarea>
-                            <label for="form-text">Сообщение</label>
-                        </div>
-                        <div class="text-center">
-
-                            <button type="submit" class="btn btn-outline-primary btn-block z-depth-0 m-auto waves-effect waves-light text-uppercase roboto  font-weight-bold">Отправить</button>
-
-                        </div>
-                    </form>
-                </div>
                 <!--Grid column-->
                 <div class="col-lg-7 col-md-12">
                     <!--Grid row-->
@@ -345,6 +331,32 @@
                         <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A6d651118b4583ce72df9d28f8d4bc4bb6816317a3961308a441a767ece6b9a01&amp;width=100%25&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
                     </div>
                 </div>
+                <!--Grid column-->
+                 <div class="col-lg-5 col-md-12">
+                    <!-- Form contact -->
+                    <form action="." method="post" class="border border-light p-5 z-depth-1 font-weight-bold">
+                        {% csrf_token %}
+                        <p class="h4 mb-4 text-center">Заказать обратный звонок</p>
+                        {{ form.errors }}
+                        <div class="md-form">
+                            <input type="text" id="form-name" name="name" required class="form-control">
+                            <label for="form-name">Имя</label>
+                        </div>
+                        <div class="md-form">
+                            <input type="text" id="form-phone" name="phone" required class="form-control">
+
+                            <label for="form-phone">Телефон</label>
+                        </div>
+                        <div class="md-form">
+                            <textarea type="text" id="form-text" name="message" class="form-control md-textarea" rows="3"></textarea>
+                            <label for="form-text">Сообщение</label>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-outline-grey btn-block z-depth-0 m-auto waves-effect waves-light text-uppercase roboto  font-weight-bold">Отправить</button>
+                        </div>
+                    </form>
+                </div>
+
             </div>
         </section>
     </div>
