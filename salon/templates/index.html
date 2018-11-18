@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     {% load static %}
-    <link rel="stylesheet" type="text/css" href="salon/static/css/style.css"/>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -32,7 +31,7 @@
 			<img class="loader-logo" src="{% static '/img/logo.svg' %}">
 		</div>
     </div>
-    <div class="gears loads ">
+    <div class="gears loads d-none d-lg-block">
         <div class="gear one">
             <div class="bar"></div>
             <div class="bar"></div>
@@ -65,22 +64,22 @@
                 <!-- Links -->
                 <ul class="navbar-nav m-auto smooth-scroll text-uppercase   pl-10" >
                     <li class="nav-item m-2">
-                        <a data-scroll class="nav-link text-dark font-weight-bold" href="#about">О нас</a>
+                        <a data-scroll data-toggle="collapse" data-target="#basicNav" class="nav-link text-dark font-weight-bold" href="#about">О нас</a>
                     </li>
                     <li class="nav-item m-2">
-                        <a data-scroll class="nav-link text-dark font-weight-bold" href="#price">Меню</a>
+                        <a data-scroll data-toggle="collapse" data-target="#basicNav" class="nav-link text-dark font-weight-bold" href="#price">Меню</a>
                     </li>
                     <li class="nav-item m-2">
-                        <a data-scroll class="nav-link text-dark font-weight-bold" href="#gallery">Салон</a>
+                        <a data-scroll data-toggle="collapse" data-target="#basicNav" class="nav-link text-dark font-weight-bold" href="#gallery">Салон</a>
                     </li>
                     <li class="nav-item m-2">
-                        <a data-scroll class="nav-link text-dark font-weight-bold" href="#reviews">Отзывы</a>
+                        <a data-scroll data-toggle="collapse" data-target="#basicNav" class="nav-link text-dark font-weight-bold" href="#reviews">Отзывы</a>
                     </li>
                     <li class="nav-item m-2">
-                        <a data-scroll class="nav-link text-dark font-weight-bold" href="#partners">Партнеры</a>
+                        <a data-scroll data-toggle="collapse" data-target="#basicNav" class="nav-link text-dark font-weight-bold" href="#partners">Партнеры</a>
                     </li>
                     <li class="nav-item m-2">
-                        <a data-scroll class="nav-link text-dark font-weight-bold" href="#contact">Контакты</a>
+                        <a data-scroll data-toggle="collapse" data-target="#basicNav" class="nav-link text-dark font-weight-bold" href="#contact">Контакты</a>
                     </li>
 
                     {% if request.user.is_staff %}
@@ -292,7 +291,7 @@
             </div>
         </section>
         <hr class="my-5">
-        <section id="contact ">
+        <section id="contact">
             <!-- Heading -->
             <h2 class="mb-5 font-weight-bold text-center">Контакты</h2>
             <!--Grid row-->
