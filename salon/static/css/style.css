@@ -76,8 +76,16 @@ body{
 }
 
 .map-layers-pane{
+    position: relative;
     -webkit-filter: grayscale(50%);
 }
+/*.map-label{*/
+    /*z-index: 9999;*/
+    /*position: absolute;*/
+    /*left: 200px;*/
+    /*top: 100px;*/
+    /*background-color: white;*/
+/*}*/
 .brand-logo{
     -webkit-filter: grayscale(100%);
 }
