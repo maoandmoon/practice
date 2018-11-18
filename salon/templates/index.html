@@ -9,7 +9,9 @@
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,600" rel="stylesheet">
     <!-- Bootstrap core CSS -->
+
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
     <!-- Material Design Bootstrap -->
     <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
@@ -237,22 +239,22 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-4 mb-1 brand-logo">
-                        <img class="img-fluid w-50" src="{% static 'img/cnd.jpg' %}">
+                        <img class="img-fluid" width="250" src="{% static 'img/cnd.jpg' %}">
                     </div>
                     <div class="col-md-4 mb-1 brand-logo">
-                        <img class="img-fluid w-50" src="{% static 'img/joico.jpg' %}">
+                        <img class="img-fluid" width="250" src="{% static 'img/joico.jpg' %}">
                     </div>
                     <div class="col-md-4 mb-1 brand-logo">
-                        <img class="img-fluid w-50" src="{% static 'img/opi.jpg' %}">
+                        <img class="img-fluid" width="250" src="{% static 'img/opi.jpg' %}">
                     </div>
                     <div class="col-md-4 brand-logo">
-                        <img class="img-fluid w-50" src="{% static 'img/beautix.jpg' %}">
+                        <img class="img-fluid" width="250" src="{% static 'img/beautix.jpg' %}">
                     </div>
                     <div class="col-md-4 brand-logo">
-                        <img class="img-fluid w-50" src="{% static 'img/gehwol.jpg' %}">
+                        <img class="img-fluid" width="250" src="{% static 'img/gehwol.jpg' %}">
                     </div>
                     <div class="col-md-4 brand-logo">
-                        <img class="img-fluid w-50" src="{% static 'img/redken.jpg' %}">
+                        <img class="img-fluid" width="250" src="{% static 'img/redken.jpg' %}">
                     </div>
                 </div>
             </div>
@@ -342,10 +344,6 @@
                             <p>Адрес: пр-т Мира, 102/30, Москва, 129223</p>
                             <br>
                             <p>Ежедневно с 10:00 до 21:00</p>
-{##}
-{#                            <p><i class="fa fa-map fa-1x mr-2 black-text"></i>Проспект Мира, 102 стр. 30</p>#}
-{#                            <p><i class="fa fa-clock-o fa-1x mr-2 black-text"></i>Ежедневно с 10:00 - 21:00</p>#}
-{#                            <p><i class="fa fa-phone fa-1x mr-2 black-text"></i>+7 (962) 944-40-47</p>#}
                         </div>
 
                     </div>
@@ -355,63 +353,59 @@
     </div>
 </main>
 <footer class="page-footer font-small">
-    <!--Footer Links-->
-{#    <div class="container mt-3 mb-4 text-center text-md-left">#}
-{#        <div class="row pt-3">#}
-{#            <!--First column-->#}
-{#            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">#}
-{#              <h6 class="text-uppercase font-weight-bold">#}
-{#                <strong>Практика</strong>#}
-{#              </h6>#}
-{#              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">#}
-{#              <p>Лабаратория красоты на Проспекие Мира</p>#}
-{#            </div>#}
-{#            <!--Second column-->#}
-{#            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">#}
-{#              <h6 class="text-uppercase font-weight-bold">#}
-{#                <strong>Наше меню</strong>#}
-{#              </h6>#}
-{#              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">#}
-{#              <p>#}
-{#                Цены на сайте могут не соответствовать.#}
-{#                Пожалуйста, уточняйте точную стоимость перед записью.#}
-{#                </p>#}
-{#            </div>#}
-{#            <!--Third column-->#}
-{#            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">#}
-{#              <h6 class="text-uppercase font-weight-bold">#}
-{#                <strong>Полезные ссылки</strong>#}
-{#              </h6>#}
-{#              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">#}
-{#              <p>#}
-{#                <a href="#about">Цены на услуги</a>#}
-{#              </p>#}
-{#                <p>#}
-{#                <a href="https://www.instagram.com/praktikabeauty/" target="_blank" >Instagram</a>#}
-{#              </p>#}
-{#              <p>#}
-{#                <a href="http://praktika-salon.ru/reviews/" target="_blank">Отзыввы</a>#}
-{#              </p>#}
-{#              <p>#}
-{#                <a href="#contact">Контакты</a>#}
-{#              </p>#}
-{#            </div>#}
-{#            <!--Fourth column-->#}
-{#            <div class="col-md-4 col-lg-3 col-xl-3">#}
-{#              <h6 class="text-uppercase font-weight-bold">#}
-{#                <strong>Контакты</strong>#}
-{#              </h6>#}
-{#              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">#}
-{#              <p>#}
-{#                <i class="fa fa-home mr-3"></i> пр-т Мира 102 стр30</p>#}
-{#              <p>#}
-{#                <i class="fa fa-envelope mr-3"></i> praktikabeauty@gmail.com</p>#}
-{#              <p>#}
-{#                <i class="fa fa-phone mr-3"></i> +7 962 944 40 47</p>#}
-{#            </div>#}
-{#        </div>#}
-{#      </div>#}
-    <!-- Copyright -->
+    <!--
+    <div class="container mt-3 mb-4 text-center text-md-left">
+        <div class="row pt-3">
+            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
+              <h6 class="text-uppercase font-weight-bold">
+                <strong>Практика</strong>
+              </h6>
+              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>Лабаратория красоты на Проспекие Мира</p>
+            </div>
+            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase font-weight-bold">
+                <strong>Наше меню</strong>
+              </h6>
+              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                Цены на сайте могут не соответствовать.
+                Пожалуйста, уточняйте точную стоимость перед записью.
+                </p>
+            </div>
+            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+              <h6 class="text-uppercase font-weight-bold">
+                <strong>Полезные ссылки</strong>
+              </h6>
+              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <a href="#about">Цены на услуги</a>
+              </p>
+                <p>
+                <a href="https://www.instagram.com/praktikabeauty/" target="_blank" >Instagram</a>
+              </p>
+              <p>
+                <a href="http://praktika-salon.ru/reviews/" target="_blank">Отзыввы</a>
+              </p>
+              <p>
+                <a href="#contact">Контакты</a>
+              </p>
+            </div>
+            <div class="col-md-4 col-lg-3 col-xl-3">
+              <h6 class="text-uppercase font-weight-bold">
+                <strong>Контакты</strong>
+              </h6>
+              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
+              <p>
+                <i class="fa fa-home mr-3"></i> пр-т Мира 102 стр30</p>
+              <p>
+                <i class="fa fa-envelope mr-3"></i> praktikabeauty@gmail.com</p>
+              <p>
+                <i class="fa fa-phone mr-3"></i> +7 962 944 40 47</p>
+            </div>
+        </div>
+      </div>
+    -->
     <div class="text-center py-3 text-dark">© 2018 Copyright:
         <a href="mailto:maoandmoon@gmail.com?subject=PracticeLab" class="text-dark">MaoAndMoon</a>
     </div>
