@@ -1733,7 +1733,8 @@ a.text-light:hover, a.text-light:focus {
 
 .font-small {
   font-size: 0.9rem; }
-
+.font-large {
+  font-size: 1.2rem; }
 .view {
   position: relative;
   overflow: hidden;
@@ -7462,13 +7463,14 @@ body.scrollable {
 
 footer.page-footer {
   bottom: 0;
-  color: #fff; }
+}
   footer.page-footer .container-fluid {
     width: auto; }
   footer.page-footer .footer-copyright {
-    overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.2);
-    color: rgba(255, 255, 255, 0.6); }
+    /*overflow: hidden;*/
+    /*background-color: rgba(0, 0, 0, 0.2);*/
+    /*color: rgba(255, 255, 255, 0.6);*/
+  }
   footer.page-footer a {
     color: #fff; }
 
