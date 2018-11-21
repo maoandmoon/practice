@@ -1,14 +1,33 @@
+# coding=utf-8
+import json
 from datetime import datetime
 from django.shortcuts import render
 from django.views import generic
-from .calculate import calculate_delay
 from .models import *
 from .forms import *
 from dal_select2.views import Select2QuerySetView
+from django.http import HttpResponse
 
 
-class GoogleView(generic.TemplateView):
-    template_name = "google974155f7650aa67c.html"
+class ContactAjaxFormView(generic.FormView):
+    form_class = ContactModelForm
+    template_name = 'ajax-form.html'
+
+    def post(self, request, *args, **kwargs):
+        contact = self.form_class(request.POST)
+        if contact.is_valid():
+            contact.save(commit=False)
+            contact.created = datetime.now()
+            contact.save()
+            # contact.send_email()
+            response_data = {"message": "Спасибо, что выбрали нас. Мы скоро с ваит свяжимся."}
+            return HttpResponse(json.dumps(response_data), content_type="application/json")
+        return self.form_invalid(contact)
+
+    def form_invalid(self, form):
+        errors = form.errors
+        errors = json.dumps(errors)
+        return HttpResponse(errors, content_type="application/json")
 
 
 class SubCategorySelect2(Select2QuerySetView):
@@ -33,7 +52,6 @@ class Home(generic.FormView):
         context['image_list'] = ImageCard.objects.all()
         context['instagram_links'] = InstagramLink.objects.all()
         context['categories'] = Category.objects.all().order_by("-id")
-        # context
         return context
 
     # TODO: AJAX

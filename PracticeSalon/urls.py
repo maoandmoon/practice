@@ -17,16 +17,15 @@ from django.contrib import admin
 from django.urls import path, re_path
 from django.conf.urls.static import static
 from django.conf import settings
-from salon.views import Home, SubCategorySelect2, GoogleView
+from salon.views import Home, SubCategorySelect2, ContactAjaxFormView
 from django.views.generic.base import RedirectView
 
-favicon_view = RedirectView.as_view(url='/static/favicon.ico', permanent=True)
 
 urlpatterns = [
     path('', Home.as_view(), name='home'),
     path('admin/', admin.site.urls),
-    re_path(r'^google974155f7650aa67c\.html$', GoogleView.as_view(), name='goo'),
+    path('contact/', ContactAjaxFormView.as_view(), name='contact'),
+    path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True), name='favicon'),
     re_path(r'subcategory-autocomplete/$', SubCategorySelect2.as_view(), name='subcategory_autocomplete'),
-    re_path(r'^favicon\.ico$', favicon_view),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) \
               + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

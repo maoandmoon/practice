@@ -18,5 +18,5 @@ def validate_phone_number(phone):
             validate_international_phonenumber('+7%s' % phone)
         else:
             validate_international_phonenumber(phone)
-    except ValidationError as e:
+    except ValidationError:
         raise ValidationError("Неправильный формат номера телефона.")

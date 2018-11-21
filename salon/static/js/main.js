@@ -1,3 +1,4 @@
+
 $(function() {
     setTimeout(function(){
          $('.preloader').fadeOut();
@@ -15,10 +16,29 @@ $(document).ready(
         $('#form-phone').usPhoneFormat();
         function scrollToSection(event) {
             event.preventDefault();
-            var $section = $($(this).attr('href'));
+            let $section = $($(this).attr('href'));
             $('html, body').animate({scrollTop: $section.offset().top - 75}, scrollDelay($section.offset().top));
         }
         $('[data-scroll]').on('click', scrollToSection);
     }(jQuery)
 );
+$(function() {
+    $('form').submit(function(e) {
+        let $form = $(this);
+        $.ajax({
+            type: $form.attr('method'),
+            url: $form.attr('action'),
+            data: $form.serialize(),
+            dataType: 'json'
+        }).done(function(data) {
+            console.log(data.message);
+            console.log('success');
+        }).fail(function(data) {
+            console.log(data);
+            console.log('fail');
+        });
+        e.preventDefault();
+    });
+});
+
 new WOW().init();
