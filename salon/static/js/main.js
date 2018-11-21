@@ -13,6 +13,22 @@ function scrollDelay(offset){
 $(document).ready(
     function($) {
         $('.carousel').carousel({interval: 3000});
+
+        $('.loop').owlCarousel({
+            center: true,
+            items: 1,
+            loop: true,
+            margin: 10,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                700: {
+                    items: 2
+                }
+            }
+        });
+
         $('#form-phone').usPhoneFormat();
         function scrollToSection(event) {
             event.preventDefault();

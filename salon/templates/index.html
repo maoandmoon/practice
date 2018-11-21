@@ -19,6 +19,8 @@
     <link href="{% static 'css/style.min.css' %}" rel="stylesheet">
     <!--  assuming your livereload server runs at localhost:35729 -->
     <link href="{% static 'css/animations.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.theme.default.min.css' %}" rel="stylesheet">
 
     {% if debug %}
         <script async type="text/javascript" src="//localhost:35729/livereload.js"></script>
@@ -33,23 +35,6 @@
 			<img class="loader-logo" src="{% static '/img/logo.svg' %}">
 		</div>
     </div>
-{#    <div class="gears loads d-none d-lg-block">#}
-{#        <div class="gear one">#}
-{#            <div class="bar"></div>#}
-{#            <div class="bar"></div>#}
-{#            <div class="bar"></div>#}
-{#        </div>#}
-{#        <div class="gear two">#}
-{#            <div class="bar"></div>#}
-{#            <div class="bar"></div>#}
-{#            <div class="bar"></div>#}
-{#        </div>#}
-{#        <div class="gear three">#}
-{#            <div class="bar"></div>#}
-{#            <div class="bar"></div>#}
-{#            <div class="bar"></div>#}
-{#        </div>#}
-{#    </div>#}
 </div>
 <header>
     <!--Navbar-->
@@ -189,7 +174,20 @@
             </div>
         </section>
         <hr class="my-5">
-
+        <section id="gallery-2">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h4>Галерея</h4>
+                    <div class="loop owl-carousel owl-theme">
+                        {% for image in image_list %}
+                            <div class="item">
+                                <img class="d-block w-100" src="{{ image.thumb.url }}" alt="salon photo">
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </section>
         <section id="gallery">
             <!-- Heading -->
             <h2 class="mb-5 font-weight-bold text-center">Галерея</h2>
@@ -352,59 +350,6 @@
     </div>
 </main>
 <footer class="page-footer font-small">
-    <!--
-    <div class="container mt-3 mb-4 text-center text-md-left">
-        <div class="row pt-3">
-            <div class="col-md-3 col-lg-4 col-xl-3 mb-4">
-              <h6 class="text-uppercase font-weight-bold">
-                <strong>Практика</strong>
-              </h6>
-              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>Лабаратория красоты на Проспекие Мира</p>
-            </div>
-            <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
-              <h6 class="text-uppercase font-weight-bold">
-                <strong>Наше меню</strong>
-              </h6>
-              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                Цены на сайте могут не соответствовать.
-                Пожалуйста, уточняйте точную стоимость перед записью.
-                </p>
-            </div>
-            <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
-              <h6 class="text-uppercase font-weight-bold">
-                <strong>Полезные ссылки</strong>
-              </h6>
-              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                <a href="#about">Цены на услуги</a>
-              </p>
-                <p>
-                <a href="https://www.instagram.com/praktikabeauty/" target="_blank" >Instagram</a>
-              </p>
-              <p>
-                <a href="http://praktika-salon.ru/reviews/" target="_blank">Отзыввы</a>
-              </p>
-              <p>
-                <a href="#contact">Контакты</a>
-              </p>
-            </div>
-            <div class="col-md-4 col-lg-3 col-xl-3">
-              <h6 class="text-uppercase font-weight-bold">
-                <strong>Контакты</strong>
-              </h6>
-              <hr class="white accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 60px;">
-              <p>
-                <i class="fa fa-home mr-3"></i> пр-т Мира 102 стр30</p>
-              <p>
-                <i class="fa fa-envelope mr-3"></i> praktikabeauty@gmail.com</p>
-              <p>
-                <i class="fa fa-phone mr-3"></i> +7 962 944 40 47</p>
-            </div>
-        </div>
-      </div>
-    -->
     <div class="text-center py-3 text-dark">© 2018 Copyright:
         <a href="mailto:maoandmoon@gmail.com?subject=PracticeLab" class="text-dark">MaoAndMoon</a>
     </div>
@@ -417,6 +362,7 @@
 <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 <!-- Jquery plugins -->
 <script type="text/javascript" src="{% static 'js/jquery-input-mask-phone-number.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/main.js' %}"></script>
