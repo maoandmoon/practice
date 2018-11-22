@@ -12,6 +12,8 @@ function scrollDelay(offset){
 }
 $(document).ready(
     function($) {
+        $('.carousel').carousel({interval: 3000});
+
         $('.loop').owlCarousel({
             center: true,
             items: 3,

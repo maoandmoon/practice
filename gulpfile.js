@@ -54,7 +54,7 @@ gulp.task('liver', function() {
 
 gulp.task('url', function(){
   gulp.src(__filename)
-  .pipe(open({uri: 'http://192.168.0.105:8000/'}));
+  .pipe(open({uri: 'http://192.168.0.105:8000'}));
 });
 
 
