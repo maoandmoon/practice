@@ -261,3 +261,13 @@ def add_all_prices(price):
                     price_item.category = c
                     price_item.subcategory = sc
                     price_item.save()
+
+
+def delete_price():
+    for c in Category.objects.all():
+        c.delete()
+    for sc in SubCategory.objects.all():
+        sc.delete()
+    for p in PriceItem.objects.all():
+        p.delete()
+
