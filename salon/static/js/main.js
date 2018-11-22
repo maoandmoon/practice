@@ -12,13 +12,14 @@ function scrollDelay(offset){
 }
 $(document).ready(
     function($) {
-        $('.carousel').carousel({interval: 3000});
-
         $('.loop').owlCarousel({
             center: true,
-            items: 1,
+            items: 3,
+            autoWidth:true,
+            // stagePadding: 75,
             loop: true,
-            margin: 10,
+            margin: 7,
+
             responsive: {
                 0: {
                     items: 1

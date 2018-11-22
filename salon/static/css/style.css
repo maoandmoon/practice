@@ -90,6 +90,7 @@ body{
 .brand-logo{
     -webkit-filter: grayscale(100%);
 }
+
 .brand-logo img{
     filter: opacity(50%);
 }
@@ -100,6 +101,32 @@ body{
 .brand-logo img:hover{
     filter: opacity(100%);
 }
+
+.owl-item {
+    filter: opacity(50%);
+}
+.owl-item img{
+    filter: grayscale(50%);
+
+}
+
+.owl-item.center {
+    filter: opacity(100%);
+
+}
+.owl-item.center img{
+    filter: grayscale(0%);
+
+    /*width: 110%!important;*/
+    /*margin-left: -5%!important;*/
+    /*margin-bottom: 5%!important;*/
+
+}
+
+/*.owl-item.active img{*/
+    /*filter: opacity(0%);*/
+/*}*/
+
 .pl-10{
     padding-left: 10%;
 }

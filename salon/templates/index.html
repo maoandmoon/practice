@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
-    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,600" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond:400,500,600,700" rel="stylesheet">
     <!-- Bootstrap core CSS -->
 
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
@@ -174,10 +174,10 @@
             </div>
         </section>
         <hr class="my-5">
-        <section id="gallery-2">
+        <section id="gallery">
             <div class="row">
                 <div class="col-12 text-center">
-                    <h4>Галерея</h4>
+                <h2 class="mb-5 font-weight-bold text-center">Галерея</h2>
                     <div class="loop owl-carousel owl-theme">
                         {% for image in image_list %}
                             <div class="item">
@@ -188,53 +188,12 @@
                 </div>
             </div>
         </section>
-        <section id="gallery">
-            <!-- Heading -->
-            <h2 class="mb-5 font-weight-bold text-center">Галерея</h2>
-            <!--Grid row-->
-            <div class="row">
-              <!--Grid column-->
-                <div class="col-lg-11 col-md-12 mx-auto">
-                    <!--Carousel Wrapper-->
-                    <div id="carousel-example-1z" class="carousel slide " data-ride="carousel">
-                        <!--Indicators-->
-                        <ol class="carousel-indicators">
-                            <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
-                            <li data-target="#carousel-example-1z" data-slide-to="1"></li>
-                            <li data-target="#carousel-example-1z" data-slide-to="2"></li>
-                        </ol>
-                        <!--Slides-->
-                        <div class="carousel-inner" role="listbox">
-                            {% for image in image_list %}
-                                {% ifequal image image_list.first %}
-                                    <div class="carousel-item active">
-                                        <img class="d-block w-100" src="{{ image.thumb.url }}" alt="First slide">
-                                    </div>
-                                {% else %}
-                                    <div class="carousel-item">
-                                        <img class="d-block w-100" src="{{ image.thumb.url }}" alt="Second slide">
-                                    </div>
-                                {% endifequal %}
-                            {% endfor %}
-                        </div>
-                        <!--Controls-->
-                        <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Вперед</span>
-                        </a>
-                        <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Назад</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
         <hr class="my-5">
         <!--Section: partners-->
         <section id="partners" class="text-center">
             <h2 class="font-weight-bold mb-5">Наши партнеры</h2>
             <div class="container">
+
                 <div class="row">
                     <div class="col-md-4 mb-1 brand-logo">
                         <img class="img-fluid" width="250" src="{% static 'img/cnd.jpg' %}">
@@ -350,8 +309,8 @@
     </div>
 </main>
 <footer class="page-footer font-small">
-    <div class="text-center py-3 text-dark">© 2018 Copyright:
-        <a href="mailto:maoandmoon@gmail.com?subject=PracticeLab" class="text-dark">MaoAndMoon</a>
+    <div class="text-center py-3 font-weight-bold text-dark">© 2018 Copyright:
+        <a href="mailto:maoandmoon@gmail.com?subject=PracticeLab" class="font-weight-bold text-dark">MaoAndMoon</a>
     </div>
 </footer>
 <!-- JQuery -->
@@ -361,10 +320,10 @@
 <!-- Bootstrap core JavaScript -->
 <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
 <!-- Jquery plugins -->
-<script type="text/javascript" src="{% static 'js/jquery-input-mask-phone-number.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery-input-mask-phone-number.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'js/owl.carousel.min.js' %}"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/main.min.js' %}"></script>
 </body>
 </html>
