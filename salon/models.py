@@ -79,7 +79,7 @@ class ImageCard(models.Model):
     def thumbnail(self):
         if self.image:
             return mark_safe(
-                '<img style="height:180px;width:400px;" src="{0}"/>'.format(self.thumb.url))
+                '<img style="height:300px;width:450px;" src="{0}"/>'.format(self.thumb.url))
         return mark_safe('<p>=(</p>')
 
     thumbnail.short_description = 'Миниатюра'
