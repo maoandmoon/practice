@@ -71,7 +71,7 @@ class Contact(models.Model):
 
 class ImageCard(models.Model):
     image = models.ImageField(verbose_name='Фотография', upload_to='images', blank=True, null=True)
-    thumb = ImageSpecField(source='image', options={'quality': 100}, processors=[SmartResize(900, 600)])
+    thumb = ImageSpecField(source='image', options={'quality': 100}, processors=[SmartResize(880, 550)])
 
     def __str__(self):
         return self.thumbnail()
@@ -79,7 +79,7 @@ class ImageCard(models.Model):
     def thumbnail(self):
         if self.image:
             return mark_safe(
-                '<img style="height:300px;width:450px;" src="{0}"/>'.format(self.thumb.url))
+                '<img style="height:300px;width:400px;" src="{0}"/>'.format(self.thumb.url))
         return mark_safe('<p>=(</p>')
 
     thumbnail.short_description = 'Миниатюра'
