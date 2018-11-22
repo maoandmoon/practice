@@ -241,24 +241,24 @@
         <hr class="my-5">
         <section id="reviews" class="text-center">
             <h2 class="font-weight-bold mb-5">Обратная связь</h2>
-            <div class="container">
-                <div class="row d-flex mt-4">
-                <div class="col-md-6 text-left">
-                    <p class="grey-text" >
+            <div class="container-fluid">
+                <div class="row my-5">
+                <div class="col-lg-6 pb-5 d-flex align-items-end flex-column text-left">
+                    <p class="grey-text p-1" >
                         Ежедневно команда Лаборатории красоты «Практика» совершенствуется, чтобы предоставлять исключительно комфортный и высококлассный сервис! Вы можете ознакомиться с отзывами о нас на платформе zoon.ru. Нам важно мнение каждого из вас! Если у Вас есть какие-либо пожелания касательно улучшения  качества предоставляемых услуг , пожалуйста, воспользуйтесь окном «обратной связи».
                     </p>
-                    <p class="grey-text" >
+                    <p class="grey-text p-1" >
                         В случае возникновения вопросов сотрудничества и иного характера, пожалуйста, свяжитесь с нами по эл. почте: praktikabeauty@gmail.com
                     </p>
 
-                    <div class="text-center">
+                    <div class="text-center m-auto">
                     <a href="http://praktika-salon.ru/reviews/" target="_blank"  class="btn waves-effect waves-light btn-outline-grey ">
                         <h5 class="text-uppercase roboto">Перейти к отзывам</h5>
                         <img class="brand-logo" src="{% static '/img/zooncolor.jpg' %}" width="150">
                     </a>
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-lg-6  flex-column pb-5">
                     <!-- Form contact -->
                     <form action="{% url 'contact' %}" method="post" class="border border-light p-5 z-depth-1 font-weight-bold">
                         {% csrf_token %}
@@ -276,7 +276,7 @@
                             <textarea type="text" id="form-text" name="message" class="form-control md-textarea" rows="3"></textarea>
                             <label for="form-text">Сообщение</label>
                         </div>
-                        <div class="text-center">
+                        <div class="text-center m-auto pt-2 ">
                             <button type="submit" class="btn btn-outline-grey btn-block z-depth-1 m-auto waves-effect waves-light text-uppercase roboto  font-weight-bold">Отправить</button>
                         </div>
                     </form>
