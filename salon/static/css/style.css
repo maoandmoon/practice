@@ -8,19 +8,25 @@ header,
 body{
     font-family: 'Cormorant Garamond', "Roboto", sans-serif;
 }
-
-#intro {
-    @media (max-width: 768px) {
-      background: color white;
+#upper {
+        background-color: #fff;
     }
-  @media (min-width: 769px){
-    background: url("../img/albom/12.jpg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-          }
-}
+    @media (max-width: 600px) {
+        #intro {
+            background-color: white;
+        }
+    }
+    @media (min-width: 601px) and (max-width: 1600px){
+            #intro{
+            background: url("../img/albom/12.jpg") no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            }
+        }
+
+
 .top-nav-collapse {
     background-color: #fff;
   }
