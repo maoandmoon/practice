@@ -16,7 +16,7 @@ body{
             background-color: white;
         }
     }
-    @media (min-width: 601px) and (max-width: 1600px){
+    @media (min-width: 601px){
             #intro{
             background: url("../img/albom/12.jpg") no-repeat center center fixed;
             -webkit-background-size: cover;
