@@ -1,13 +1,13 @@
 
-$(function() {
-    setTimeout(function(){
-         $('.preloader').fadeOut();
-        }, 2000);
-});
+// $(function() {
+//     setTimeout(function(){
+//          $('.preloader').fadeOut();
+//         }, 2000);
+// });
 
 function scrollDelay(offset){
     offset = Math.round(offset);
-    let targetOffset = Math.max(pageYOffset, offset) - Math.min(pageYOffset, offset);
+    var targetOffset = Math.max(pageYOffset, offset) - Math.min(pageYOffset, offset);
     return Math.round(Math.pow(targetOffset, 0.89));
 }
 $(document).ready(
@@ -35,7 +35,7 @@ $(document).ready(
         $('#form-phone').usPhoneFormat();
         function scrollToSection(event) {
             event.preventDefault();
-            let $section = $($(this).attr('href'));
+            var $section = $($(this).attr('href'));
             $('html, body').animate({scrollTop: $section.offset().top - 75}, scrollDelay($section.offset().top));
         }
         $('[data-scroll]').on('click', scrollToSection);
@@ -43,7 +43,7 @@ $(document).ready(
 );
 $(function() {
     $('form').submit(function(e) {
-        let $form = $(this);
+        var $form = $(this);
         $.ajax({
             type: $form.attr('method'),
             url: $form.attr('action'),
